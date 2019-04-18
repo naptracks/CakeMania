@@ -1,0 +1,47 @@
+/* Découvrir */
+.btn-primary{
+    background-color: rgba(19, 15, 64, 0.75);
+    color: #ffffff;
+    border-color: transparent;
+}
+.btn-primary:hover{
+    background-color: #130f40;
+    color: #ffffff;
+    border-color: transparent;
+}
+
+/* Ajouter */
+.btn-secondary{
+    background-color: #ff7979;
+    color: #ffffff;
+    border-color: transparent;
+}
+.btn-secondary:hover{
+    background-color: #eb4d4b;
+    color: #ffffff;
+    border-color: transparent;
+}
+
+/* Envoyer */
+.btn-success{
+    background-color: #30336b;
+    color: #ffffff;
+    border-color: transparent;
+}
+.btn-success:hover{
+    background-color: #130f40;
+    color: #ffffff;
+    border-color: transparent;
+}
+
+/* + et - */
+.btn-danger{
+    background-color: #ffbe76;
+    color: #ffffff;
+    border-color: transparent;
+}
+.btn-danger:hover{
+    background-color: #f0932b;
+    color: #ffffff;
+    border-color: transparent;
+}
