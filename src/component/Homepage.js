@@ -5,10 +5,7 @@ class Homepage extends Component {
     render() {
         return (
             <div>
-
-                {/* Carousel */}
-                <Carousel />
-                
+                <Carousel />                
             </div>
         );
     }
