@@ -29,9 +29,6 @@ class Footer extends Component {
                                 <a href="https://www.facebook.com/" target="blank"><i className="fab fa-facebook-square"></i></a>
                                 <a href="https://twitter.com/" target="blank"><i className="fab fa-twitter-square"></i></a>
                                 <a href="https://www.instagram.com/" target="blank"><i className="fab fa-instagram"></i></a>
-                                    
-                                    
-                                    
                                 </div>
                             </div>
                         </div>
