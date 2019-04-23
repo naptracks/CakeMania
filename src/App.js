@@ -24,7 +24,8 @@ class App extends Component {
         <div className="container-fluid">
           <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
             <div className="container-fluid">
-              <img src={logo} id="logo" className="img-fluid" />
+              <Link to="/"><img src={logo} alt="Logo" id="logo" className="img-fluid" /></Link>
+              
               <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
                 aria-controls="menu" aria-expanded="false" aria-label="Afficher le menu de navigation">
                 <span className="navbar-toggler-icon"></span>
@@ -33,11 +34,10 @@ class App extends Component {
               <div id="navbarContent" className="navbar-collapse collapse">
 
                 <ul className="nav navbar-nav ml-auto">
-                  <li className="nav-item pr-4"><Link to="/"><button type="button" className="btn btn-primary">Accueil</button></Link></li>
-                  <li className="nav-item pr-4"><Link to="/products"><button type="button" className="btn btn-info">Catalogue</button></Link></li>
-                  <li className="nav-item pr-4"><Link to="/contact"><button type="button" className="btn btn-dark">Nous contacter</button></Link></li>
-                  <li className="nav-item pr-4"><Link to="/account"><button type="button" className="btn btn-dark">Mon compte</button></Link></li>
-                  <li className="nav-item pr-4"><Link to="/basket"><button type="button" className="btn btn-dark">Panier</button></Link></li>
+                  <li className="nav-item mr-4 navButton my-2"><Link to="/products">Catalogue</Link></li>
+                  <li className="nav-item mr-4 navButton my-2"><Link to="/contact">Nous contacter</Link></li>
+                  <li className="nav-item mr-4 navButton my-2"><Link to="/account">Mon compte</Link></li>
+                  <li className="nav-item mr-4 navButton my-2"><Link to="/basket">Panier</Link></li>
                 </ul>
               </div>
               </div>
