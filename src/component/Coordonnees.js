@@ -5,24 +5,24 @@ import './Coordonnees.css';
 class Coordonnees extends Component {
     render() {
         return (
-            <div className="row my-5 px-5">
-                <div className="col-sm-12 col-lg-6 mt-5">
-                    <div id="adresse" className="text-center">
+            <div className="row my-5">
+                <div className="col-sm-12 col-lg-6 mt-5 text-center">
+                    <div id="adresse">
                         <h4>Où nous trouver :</h4>
                         <p>4 avenue de l'horizon</p>
                         <p>59650, Villeneuve d'Ascq</p>
                     </div>
-                    <div id="horaires" className="text-center">
+                    <div id="horaires">
                         <h4>Nos horaires d'ouverture :</h4>
                         <p>Lun - Ven : 8h00 - 18h00</p>
                         <p>Sam : 8h00 - 12h00</p>
                     </div>
-                    <div id="numeroTel" className="text-center">
+                    <div id="numeroTel">
                         <h4>Vous pouvez nous joindre au :</h4>
                         <p>06.12.34.56.78</p>
                     </div>
                 </div>
-                <div className="col-sm-12 col-lg-6 mt-5">
+                <div className="col-sm-12 col-lg-6 mt-5 text-center">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2532.0950251978493!2d3.1511497155611687!3d50.60677177949726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c2d7b048ecbc97%3A0xb7bd19de7bc0e94!2sM2i+Formation!5e0!3m2!1sfr!2sfr!4v1555597440171!5m2!1sfr!2sfr" title="Maps" allowFullScreen></iframe>
                 </div>
 
