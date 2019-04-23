@@ -5,10 +5,10 @@ import './Coordonnees.css';
 class Coordonnees extends Component {
     render() {
         return (
-            <div className="container">
-                <div className="row my-5">
-                    <h2>Nos coordonnées</h2>
+            <div className="container mt-5">
+            <h2>Nos coordonnées</h2>
                     <hr />
+                <div className="row my-5">
                     <div className="col-sm-12 col-lg-6 mt-5 text-center">
                         <div id="adresse">
                             <h4>Où nous trouver :</h4>
