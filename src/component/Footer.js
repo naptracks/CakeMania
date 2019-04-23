@@ -4,7 +4,7 @@ class Footer extends Component {
     render() {
         return (
             <div>
-                <footer id="footer" className="dark-wrapper">
+                <footer id="footer" className="mt-5 bg-light fixed-bottom">
                     <div className="container-fluid text-center text-md-left">
                         <div className="row">
                             <div className="col-sm">

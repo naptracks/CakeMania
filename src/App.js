@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, Link } from "react-router-dom";
 import './App.css';
 import Homepage from './component/Homepage';
-
 import Catalogue from './component/catalogue/Catalogue';
 import ContactUs from './component/nouscontacter/ContactUs';
 import Account from './component/moncompte/Account';
 import Panier from './component/panier/Panier';
+import Footer from './component/Footer';
+
+import logo from './img/logo-CakeMania.png';
 
 class App extends Component {
   render() {
@@ -20,8 +22,9 @@ class App extends Component {
           <Route path="/account" component={Account} />
           <Route path="/basket" component={Panier} />
         <div className="container-fluid">
-          <nav className="navbar navbar-expand-lg navbar-light bg-transparent fixed-top">
+          <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
             <div className="container-fluid">
+              <img src={logo} id="logo" className="img-fluid" />
               <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
                 aria-controls="menu" aria-expanded="false" aria-label="Afficher le menu de navigation">
                 <span className="navbar-toggler-icon"></span>
@@ -40,6 +43,7 @@ class App extends Component {
               </div>
           </nav>
         </div>
+        <Footer />
         </BrowserRouter>
       </div>
 
