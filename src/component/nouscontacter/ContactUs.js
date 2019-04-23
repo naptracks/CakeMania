@@ -19,7 +19,6 @@ class ContactUs extends Component {
     //Gestion du submit
     handleSubmit = (e) => {
         e.preventDefault();
-        alert(`Votre nom est : ${this.state.firstName} ${this.state.name}`);
         //Remise à zéro des champs de saisie
         if (e.target.value !== '') {
             this.setState({ name: '', firstName: '' });
