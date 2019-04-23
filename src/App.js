@@ -2,8 +2,11 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, Link } from "react-router-dom";
 import './App.css';
 import Homepage from './component/Homepage';
-import Coordonnees from './component/Coordonnees';
-import Footer from './component/Footer';
+
+import Catalogue from './component/catalogue/Catalogue';
+import ContactUs from './component/nouscontacter/ContactUs';
+import Account from './component/moncompte/Account';
+import Panier from './component/panier/Panier';
 
 class App extends Component {
   render() {
@@ -12,8 +15,10 @@ class App extends Component {
         <div>
         <BrowserRouter>
           <Route exact path="/" component={Homepage} />
-          <Route path="/coordonnees" component={Coordonnees} />
-          <Route path="/footer" component={Footer} />
+          <Route path="/products" component={Catalogue} />
+          <Route path="/contact" component={ContactUs} />
+          <Route path="/account" component={Account} />
+          <Route path="/basket" component={Panier} />
         <div className="container-fluid">
           <nav className="navbar navbar-expand-lg navbar-light bg-transparent fixed-top">
             <div className="container-fluid">
@@ -26,8 +31,10 @@ class App extends Component {
 
                 <ul className="nav navbar-nav ml-auto">
                   <li className="nav-item pr-4"><Link to="/"><button type="button" className="btn btn-primary">Accueil</button></Link></li>
-                  <li className="nav-item pr-4"><Link to="/coordonnees"><button type="button" className="btn btn-info">Coordonnées</button></Link></li>
-                  <li className="nav-item pr-4"><Link to="/footer"><button type="button" className="btn btn-dark">Footer</button></Link></li>
+                  <li className="nav-item pr-4"><Link to="/products"><button type="button" className="btn btn-info">Catalogue</button></Link></li>
+                  <li className="nav-item pr-4"><Link to="/contact"><button type="button" className="btn btn-dark">Nous contacter</button></Link></li>
+                  <li className="nav-item pr-4"><Link to="/account"><button type="button" className="btn btn-dark">Mon compte</button></Link></li>
+                  <li className="nav-item pr-4"><Link to="/basket"><button type="button" className="btn btn-dark">Panier</button></Link></li>
                 </ul>
               </div>
               </div>
