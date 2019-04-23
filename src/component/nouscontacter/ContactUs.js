@@ -48,7 +48,8 @@ class ContactUs extends Component {
 
     render() {
         return (
-            <div className="mt-5 row justify-content-center">
+            <div className="mt-5 pt-5 row justify-content-center">
+                <h2>Remplissez ce formulaire pour toute commande spécifique</h2>
                 <div className="form-group mt-5 col-5">
                     {/* Appel à la méthode de gestion du submit sur le formulaire */}
                     {/* Le onSubmit est obligatoirement placé dans la balise form => norme HTML */}
