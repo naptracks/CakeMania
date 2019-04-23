@@ -6,7 +6,7 @@ import Coordonnees from './Coordonnees';
 class Homepage extends Component {
     render() {
         return (
-            <div>
+            <div className="mt-5">
                 <Carousel />  
                 <Recommandation />   
                 <Coordonnees />           

@@ -12,13 +12,13 @@ class FAQ extends Component {
                         <hr />
                     </div>
                     <div className="col-10">
-                        <h2><i class="fa fa-user-circle"></i></h2>
+                        <h2><i className="fa fa-user-circle"></i></h2>
                         <h4>Lorem Ipsum ?</h4>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus consequuntur libero eveniet. Aliquam debitis iusto quibusdam, dignissimos obcaecati sapiente tempora inventore dolorem molestiae porro cupiditate doloremque minima nam laboriosam? Doloribus?</p>
                         <hr />
                     </div>
                     <div className="col-10">
-                        <h2><i class="fa fa-handshake"></i></h2>
+                        <h2><i className="fa fa-handshake"></i></h2>
                         <h4>Lorem Ipsum ?</h4>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus consequuntur libero eveniet. Aliquam debitis iusto quibusdam, dignissimos obcaecati sapiente tempora inventore dolorem molestiae porro cupiditate doloremque minima nam laboriosam? Doloribus?</p>
                         <hr />
