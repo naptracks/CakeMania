@@ -11,7 +11,7 @@ import Button from '../Button';
 class Carousel extends Component {
     render() {
         return (
-            <div className="container">
+            <div className="container text-center">
                 <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
                     <div className="carousel-inner positionRelative">
                         <div className="carousel-item active">
