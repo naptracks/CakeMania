@@ -1,0 +1,31 @@
+#footerLinks{
+    background-color: #ff7979;
+    padding: 1rem;
+}
+
+#copyright{
+    color: #ffffff;
+    background-color: #535c68;
+    padding: 1rem;
+}
+
+#logoFooter{
+    background-color: #ffffff;
+    padding: 1rem;
+}
+
+.list-group-item{
+    background-color: transparent;
+    color: #ffffff;
+}
+
+footer i {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+footer i:hover{
+    color: #535c68;
+}
