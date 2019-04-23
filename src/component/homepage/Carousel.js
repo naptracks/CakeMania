@@ -11,7 +11,7 @@ import Button from '../Button';
 class Carousel extends Component {
     render() {
         return (
-            <div className="container">
+            <div className="container text-center">
                 <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
                     <div className="carousel-inner positionRelative">
                         <div className="carousel-item active">
@@ -20,7 +20,10 @@ class Carousel extends Component {
                                 <div className="col-6">
                                     <h1>Nouveautés 2019</h1>
                                     <p className="subtitle">Venez découvrir notre cheesecake oreo, nos tartelettes aux fruits et nos cupcakes banane</p>
-                                    <Button name="Découvrir" />
+                                    <div className="displayNonButton">
+                                        <Button name="Découvrir" />
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -29,8 +32,10 @@ class Carousel extends Component {
                             <div className="positionAbsolute d-flex justify-content-center align-items-center">
                                 <div className="col-6">
                                     <h1>Découvrez nos offres cupcakes</h1>
-                                    <p className="subtitle">Pour l'achat de 3 cupcakes, le 4ème est gratuit.</p>
-                                    <Button name="Découvrir" />
+                                    <p className="subtitle">Pour l'achat de 3 cupcakes, le 4<sup>ème</sup> est gratuit.</p>
+                                    <div className="displayNonButton">
+                                        <Button name="Découvrir" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -40,7 +45,9 @@ class Carousel extends Component {
                                 <div className="col-6">
                                     <h1>Titre</h1>
                                     <p className="subtitle">Mon texte</p>
-                                    <Button name="Découvrir" />
+                                    <div className="displayNonButton">
+                                        <Button name="Découvrir" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
