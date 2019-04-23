@@ -29,3 +29,13 @@ footer i {
 footer i:hover{
     color: #535c68;
 }
+
+a{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+a:hover{
+    text-decoration: none;
+    color: #535c68;
+}

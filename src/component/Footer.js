@@ -11,15 +11,17 @@ class Footer extends Component {
                     <div className="container">
                         <div className="row">
                             <div className="col">
+                            <Link to="/">
                                 <img src={logo} alt="Logo" className="img-fluid" id="logoFooter" />
+                            </Link>
                             </div>
                             <div className="col">
                                 <ul className="list-group list-group-flush">
                                     <li className="list-group-item"><Link to="/products">Catalogue</Link></li>
                                     <li className="list-group-item"><Link to="/contact">Nous contacter</Link></li>
                                     <li className="list-group-item"><Link to="/account">Mon compte</Link></li>
-                                    <li className="list-group-item">Mon panier</li>
-                                    <li className="list-group-item">FAQ</li>
+                                    <li className="list-group-item"><Link to="/basket">Mon panier</Link></li>
+                                    <li className="list-group-item"><Link to="/faq">FAQ</Link></li>
                                 </ul>
                             </div>
                             <div className="col">
