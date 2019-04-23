@@ -6,9 +6,10 @@
 
 .navButton a {
   color: black;
+  text-transform: uppercase;
 }
 
 .navButton a:hover {
   text-decoration: none;
-  border-bottom: 0.2rem solid black;
+  border-bottom: 0.2rem solid #ff7979;
 }
