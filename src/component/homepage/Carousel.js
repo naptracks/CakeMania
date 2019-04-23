@@ -43,8 +43,8 @@ class Carousel extends Component {
                             <img src={slider03} className="d-block w-100" alt="..." />
                             <div className="positionAbsolute d-flex justify-content-center align-items-center">
                                 <div className="col-6">
-                                    <h1>Titre</h1>
-                                    <p className="subtitle">Mon texte</p>
+                                    <h1>Produits faits maison</h1>
+                                    <p className="subtitle">Tous nos produits sont faits maison et nos produits sont achetés en distribution locales. </p>
                                     <div className="displayNonButton">
                                         <Button name="Découvrir" />
                                     </div>
