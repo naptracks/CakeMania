@@ -30,3 +30,14 @@ h1{
   padding-left: 1rem;
   padding-right: 1rem;
 }
+
+/* Media Queries */
+@media screen and (min-width:576px) and (max-width:767px) {
+  h2{
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (min-width:768px) and (max-width:991px) {
+  
+}
