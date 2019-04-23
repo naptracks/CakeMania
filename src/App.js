@@ -7,6 +7,7 @@ import ContactUs from './component/nouscontacter/ContactUs';
 import Account from './component/moncompte/Account';
 import Panier from './component/panier/Panier';
 import Footer from './component/Footer';
+import FAQ from './component/FAQ';
 
 import logo from './img/logo-CakeMania.png';
 
@@ -21,6 +22,7 @@ class App extends Component {
           <Route path="/contact" component={ContactUs} />
           <Route path="/account" component={Account} />
           <Route path="/basket" component={Panier} />
+          <Route path="/faq" component={FAQ} />
         <div className="container-fluid">
           <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
             <div className="container">
@@ -42,6 +44,7 @@ class App extends Component {
               </div>
           </nav>
         </div>
+        
         <Footer />
         </BrowserRouter>
       </div>

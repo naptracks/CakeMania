@@ -1,5 +1,21 @@
-.row {
-    background-image: url();
+body {
+    margin: 0;
+}
+
+#FormulaireContact {
+    margin:0;
+    padding-top: 6rem;
+    background-image: url("../../img/bg-contact.png");
     background-size: cover;
     background-attachment: fixed;
+    color: white;
+    min-height: 100vh;
+}
+
+#FormulaireContact h2 {
+    text-shadow: 0 0 0.5rem #000000;
+}
+
+#FormulaireContact label {
+    text-shadow: 0 0 0.5rem #000000;
 }

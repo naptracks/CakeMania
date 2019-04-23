@@ -48,25 +48,29 @@ class ContactUs extends Component {
 
     render() {
         return (
-            <div className="mt-5 pt-5 row justify-content-center">
-                <h2>Remplissez ce formulaire pour toute commande spécifique</h2>
-                <div className="form-group mt-5 col-5">
-                    {/* Appel à la méthode de gestion du submit sur le formulaire */}
-                    {/* Le onSubmit est obligatoirement placé dans la balise form => norme HTML */}
-                    <form onSubmit={this.handleSubmit}>
-                        <label htmlFor="name">Name :</label>
-                        {/* Appel à la méthode d'enregistrement des modifications */}
-                        <input type="text" className="form-control" id="name" value={this.state.name} onChange={this.handleChangeLastName} />
-                        <label htmlFor="firstName">Firstname :</label>
-                        <input type="text" className="form-control" id="firstName" value={this.state.firstName} onChange={this.handleChangeFirstName} />
-                        <label htmlFor="mail">Mail Adress :</label>
-                        <input type="email" className="form-control" id="mail" value={this.state.mail} onChange={this.handleChangeMail} />
-                        <label htmlFor="subject">Subject :</label>
-                        <textarea className="form-control mb-4" id="subject" value={this.state.subject} onChange={this.handleChangeSubject} />
-                        <Button name="Envoyer" />
-                    </form>
+            
+                <div id="FormulaireContact">
+                <div className="container text-center">
+                    <h2>Remplissez ce formulaire pour toute commande spécifique</h2>
+                    <div className="form-group col-5">
+                        {/* Appel à la méthode de gestion du submit sur le formulaire */}
+                        {/* Le onSubmit est obligatoirement placé dans la balise form => norme HTML */}
+                        <form onSubmit={this.handleSubmit}>
+                            <label htmlFor="name">Name :</label>
+                            {/* Appel à la méthode d'enregistrement des modifications */}
+                            <input type="text" className="form-control" id="name" value={this.state.name} onChange={this.handleChangeLastName} />
+                            <label htmlFor="firstName">Firstname :</label>
+                            <input type="text" className="form-control" id="firstName" value={this.state.firstName} onChange={this.handleChangeFirstName} />
+                            <label htmlFor="mail">Mail Adress :</label>
+                            <input type="email" className="form-control" id="mail" value={this.state.mail} onChange={this.handleChangeMail} />
+                            <label htmlFor="subject">Subject :</label>
+                            <textarea className="form-control mb-4" id="subject" value={this.state.subject} onChange={this.handleChangeSubject} />
+                            <Button name="Envoyer" />
+                        </form>
+                    </div>
                 </div>
             </div>
+
 
         );
     }
