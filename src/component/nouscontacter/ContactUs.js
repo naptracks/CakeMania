@@ -49,7 +49,7 @@ class ContactUs extends Component {
     render() {
         return (
             
-                <div id="FormulaireContact">
+                <div id="FormulaireContact" className="pb-5">
                 <div className="container text-center">
                     <h2>Remplissez ce formulaire pour toute commande spécifique</h2>
                     <div className="form-group col-5">

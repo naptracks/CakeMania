@@ -6,19 +6,22 @@ class FAQ extends Component {
             <div className="pt-5 container">
                 <div className="mt-5 row">
                     <div className="col-10">
+                        <h2><i className="fa fa-book"></i></h2>
                         <h4>Pourquoi n'y a-t-il pas d'américains steak sauce mayo ?</h4>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus consequuntur libero eveniet. Aliquam debitis iusto quibusdam, dignissimos obcaecati sapiente tempora inventore dolorem molestiae porro cupiditate doloremque minima nam laboriosam? Doloribus?</p>
-                        <i className="fa fa-book"></i>
+                        <hr />
                     </div>
                     <div className="col-10">
+                        <h2><i className="fa fa-user-circle"></i></h2>
                         <h4>Lorem Ipsum ?</h4>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus consequuntur libero eveniet. Aliquam debitis iusto quibusdam, dignissimos obcaecati sapiente tempora inventore dolorem molestiae porro cupiditate doloremque minima nam laboriosam? Doloribus?</p>
-                        <i className="fa fa-book"></i>
+                        <hr />
                     </div>
                     <div className="col-10">
+                        <h2><i className="fa fa-handshake"></i></h2>
                         <h4>Lorem Ipsum ?</h4>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus consequuntur libero eveniet. Aliquam debitis iusto quibusdam, dignissimos obcaecati sapiente tempora inventore dolorem molestiae porro cupiditate doloremque minima nam laboriosam? Doloribus?</p>
-                        <i className="fa fa-book"></i>
+                        <hr />
                     </div>
                 </div>
             </div>
