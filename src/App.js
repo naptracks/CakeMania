@@ -23,7 +23,7 @@ class App extends Component {
           <Route path="/basket" component={Panier} />
         <div className="container-fluid">
           <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-            <div className="container-fluid">
+            <div className="container">
               <Link to="/"><img src={logo} alt="Logo" id="logo" className="img-fluid" /></Link>
               
               <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
