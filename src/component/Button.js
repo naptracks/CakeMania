@@ -7,6 +7,7 @@ Pour l'import du bouton utiliser :
 <Button name="Découvrir" />
 <Button name="Ajouter" />
 <Button name="Envoyer" />
+<Button name="Connexion" />
 <Button name="+" />
 <Button name="-" />
 */
@@ -58,7 +59,7 @@ class Button extends Component {
                 </button>
             );
         }
-        if (this.props.name === "Envoyer") {
+        if (this.props.name === "Envoyer" || "Connexion") {
             return (
                 <button className="btn btn-success">
                     {this.props.name}
