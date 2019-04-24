@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Carousel from './homepage/Carousel';
 import Recommandation from './homepage/Recommandation';
 import Coordonnees from './Coordonnees';
-import Connexion from './moncompte/Connexion';
+//import Connexion from './moncompte/Connexion';
 
 class Homepage extends Component {
     render() {

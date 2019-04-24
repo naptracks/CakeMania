@@ -6,8 +6,8 @@ class Coordonnees extends Component {
     render() {
         return (
             <div className="container mt-5">
-            <h2>Nos coordonnées</h2>
-                    <hr />
+                <h2>Nos coordonnées</h2>
+                <hr />
                 <div className="row mb-5">
                     <div className="col-sm-12 col-lg-6">
                         <div id="adresse">

@@ -1,25 +1,23 @@
+.marginDeBase{
+    margin-top: 6.2rem;
+}
+
 .card-deck{
     margin: 2rem auto;
     padding: 1rem 1rem; 
-    background-color:beige;
     width: 80%; 
     align-items: center;
     border-radius: 5px; 
 }
 
 .card{
-    background-color:blanchedalmond;
-    border-radius: 5px;
-    box-shadow: 10px 5px 5px grey;
-    margin: 3px 3px; 
-}
-
-.container{
-    display: flex;
-
+    /* background-color:blanchedalmond; */
+    box-shadow: 0 0 0.5rem #535c68;
+    margin: 1rem 0.2rem; 
 }
 
 .btn{
     margin: 2px 2px; 
     padding: 5px 3px; 
 }
+

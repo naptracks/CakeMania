@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Panier extends Component {
     render() {
         return (
-            <div className="mt-5">
+            <div className="marginDeBase">
                 Gestion du panier
             </div>
         );
