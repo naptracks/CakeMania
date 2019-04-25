@@ -36,7 +36,7 @@ class GestionProduits extends Component {
     affichageProduits = () => {
         return this.state.tabProduits.map((item) =>
             <div className="col-3 card">
-                <img src={imgNewProduct} className="card-img-top" alt="image gestion client" />
+                <img src={item.image} className="card-img-top" alt="image gestion client" />
                 <div className="card-body text-center">
                     <h4>{item.name}</h4>
                     <p>{item.description}</p>
