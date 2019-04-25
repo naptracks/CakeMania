@@ -1,0 +1,14 @@
+.card{
+    border: none;
+    padding: 0;
+}
+
+#creationProduit.card {
+    background-color: #22a6b3;
+    color: #ffffff;
+}
+
+i {
+    font-size: 4rem;
+}
+

@@ -1,12 +1,12 @@
 class ClassClient {
     id;
-    nom;
-    prenom;
-    mail;
-    adresse;
+    lastName;
+    firstName;
+    email;
+    adressePostale;
     codePostal;
     ville;
-    numTel;
+    tel;
     paiement;
     commande;
 }

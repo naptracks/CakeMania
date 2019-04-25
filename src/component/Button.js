@@ -52,7 +52,7 @@ class Button extends Component {
                 </button>
             );
         }
-        if (this.props.name === "Ajouter") {
+        if (this.props.name === "Ajouter" || "Modifier") {
             return (
                 <button className="btn btn-secondary">
                     {this.props.name}

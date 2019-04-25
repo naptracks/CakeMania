@@ -1,11 +1,11 @@
 class ClassProduit {
     id;
-    nom;
-    descriptif;
-    prix;
-    img;
+    name;
+    description;
+    price;
+    image;
     isRecomanded;
-    taille;
+    size;
     base;
 }
 

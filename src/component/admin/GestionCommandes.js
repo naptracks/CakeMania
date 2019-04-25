@@ -15,7 +15,7 @@ class GestionCommandes extends Component {
                 <div className="mt-3">
                     Gestion commandes
                 </div>
-                <button onClick={this.deconnexion} className="btn btn-primary">Déconnexion</button>
+                <button onClick={this.deconnexion} className="btn btn-primary mt-5">Déconnexion</button>
             </div>
         );
     }
