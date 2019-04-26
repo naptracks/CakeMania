@@ -34,10 +34,7 @@ class Recommandation extends Component {
                     <h4>{item.name}</h4>
                     <p>{item.description}</p>
                     <p>{item.price} €</p>
-                    <div>
-                        <Button name="Modifier" onClick="bb" />
-                        <button className="btn btn-primary">Supprimer</button>
-                    </div>
+                    <button className="btn btn-primary">Ajouter</button>
                 </div>
             </div>
             : ''

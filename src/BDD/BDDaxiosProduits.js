@@ -36,7 +36,7 @@ class BDDaxiosProduits {
             .catch((error) => console.log(error));
     }
     static deleteDonnees = (data, callback = undefined) => {
-        axios.delete(url + '/' + data.id)
+        axios.delete(url + '/' + data)
             .then(
                 (response) => {
                     if (callback) {
