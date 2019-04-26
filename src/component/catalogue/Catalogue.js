@@ -99,9 +99,9 @@ class Catalogue extends Component {
 calculatePrixTotal =()=>{
     let tableCommande=this.state.tableCommande;
     let prixTotal=0; 
-    for(let data of tableCommande){
-        prixTotal+=setString(data.prixCommandeSolo);
-    };
+    // for(let data of tableCommande){
+    //     prixTotal+=setString(data.prixCommandeSolo);
+    // };
 
     console.log("le prix total est de" + prixTotal)
 } 
@@ -144,39 +144,10 @@ afficherLesProduits(){
     render() {
 
         return (
-<<<<<<< HEAD
         
             <div>
                  {this.afficherLesProduits()}
                  <button type="button" class="btn btn-primary" onClick={() => this.calculatePrixTotal()}>Somme totale</button>
-=======
-            <div className="marginDeBase">
-                <div className="container">
-                    <div className="row">
-                        {this.state.tableGateaux.map((Gateau, i) =>
-                            <div className="col-sm-3" key={Gateau.id}>
-                                <div className="card text-center">
-                                    <img className="card-img-top" src={Gateau.image} alt="brownie" />
-                                    <div className="card-body">
-                                        <h5 className="card-title">{Gateau.typeGateau}</h5>
-                                        <p className="card-text">{Gateau.prix} euros</p>
-                                        <button type="button" ref={Gateau.id} className="btn btn-primary" onClick={() => this.handleDescribe(i)}>Voir descriptif</button>
-                                        <button type="button" className="btn btn-primary" onClick={() => this.handleAdd(i)}>Ajouter</button>
-                                        <BasketAdding />
-                                    </div>
-                                </div>
-                            </div>
-                        )}
-                    </div>
-                </div>
-
-                <h5>Ensemble des commandes</h5>
-                {this.state.tableCommande.map((cmd, i) => <li key={i}>
-                    {i + 1} {cmd.typeGateau} {cmd.prix}
-                </li>)}
-                <h5>PRix total des commandes</h5>
-                {this.somme}
->>>>>>> 482714ff2b280f6c09c51f5d1d49c9eb6cb2309b
             </div>
            
         );
