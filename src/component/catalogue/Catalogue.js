@@ -32,8 +32,8 @@ class Catalogue extends Component {
 
     handleAdd = (i) => {
         console.log('test')
-        let count = 0;
-        let sommePartielle = 0;
+        // let count = 0;
+        // let sommePartielle = 0;
 
 
         let tableCommande = this.state.tableCommande;
@@ -83,17 +83,17 @@ class Catalogue extends Component {
 
         return (
             <div className="marginDeBase">
-                <div class="container">
-                    <div class="row">
+                <div className="container">
+                    <div className="row">
                         {this.state.tableGateaux.map((Gateau, i) =>
-                            <div class="col-sm-3">
-                                <div class="card text-center">
-                                    <img class="card-img-top" src={Gateau.image} alt="brownie" />
-                                    <div class="card-body">
-                                        <h5 class="card-title">{Gateau.typeGateau}</h5>
-                                        <p class="card-text">{Gateau.prix} euros</p>
-                                        <button type="button" ref={Gateau.id} class="btn btn-primary" onClick={() => this.handleDescribe(i)}>Voir descriptif</button>
-                                        <button type="button" class="btn btn-primary" onClick={() => this.handleAdd(i)}>Ajouter</button>
+                            <div className="col-sm-3" key={Gateau.id}>
+                                <div className="card text-center">
+                                    <img className="card-img-top" src={Gateau.image} alt="brownie" />
+                                    <div className="card-body">
+                                        <h5 className="card-title">{Gateau.typeGateau}</h5>
+                                        <p className="card-text">{Gateau.prix} euros</p>
+                                        <button type="button" ref={Gateau.id} className="btn btn-primary" onClick={() => this.handleDescribe(i)}>Voir descriptif</button>
+                                        <button type="button" className="btn btn-primary" onClick={() => this.handleAdd(i)}>Ajouter</button>
                                         <BasketAdding />
                                     </div>
                                 </div>
