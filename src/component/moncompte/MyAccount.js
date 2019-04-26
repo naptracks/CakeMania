@@ -104,7 +104,7 @@ class MyAccount extends Component {
                 />
             </div>
              {/***********************MODAL FORMULAIRE NOM**********/}
-             <div id="mymodal" className="modal" tabindex="-1" role="dialog">
+             <div id="mymodal" className="modal" tabIndex="-1" role="dialog">
              <div className="modal-dialog" role="document">
                  <div className="modal-content">
                      <div className="modal-header">
