@@ -24,7 +24,7 @@ class Catalogue extends Component {
             ],
 
             tableCommande: [
-                { id: null, typeGateau: null, nbGateau: null, prixCommande: null }
+                { idCommande: null, typeGateau: null, nbGateauSolo: null, prixCommandeSolo: null}
             ]
         }
     }
@@ -32,6 +32,8 @@ class Catalogue extends Component {
 
     handleAdd = (i) => {
         console.log('test')
+        let count = 0;
+        let sommePartielle = 0;
         // let count = 0;
         // let sommePartielle = 0;
 
@@ -58,23 +60,83 @@ class Catalogue extends Component {
 
         console.log(tableCommande);
 
-
         this.calculatePrice(i)
+        
+    };
 
-    }
-
+      
     calculatePrice = (i) => {
-        if (this.state.tableGateaux[i].id === 0) {
-            console.log("brownie")
-        } else {
-            console.log("others")
-        }
-    }
+        
+        let tableCommande=this.state.tableCommande; 
+        let tableGateaux=this.state.tableGateaux;
+
+        let nbGateauSolo=0; 
+        let prixCommandeSolo;
+
+        let prixCake=0;
+        
+
+        for(let data of tableCommande){
+            
+            if (tableGateaux[i].id === data.id) {
+                nbGateauSolo++; 
+                prixCake=tableGateaux[i].prix;
+                
+                this.setState({nbGateauSolo: nbGateauSolo});
+            }
+            
+    }   
+                prixCommandeSolo=prixCake*nbGateauSolo;
+              
+                console.log("le prix pour le gateau " + tableGateaux[i].typeGateau + " est " + prixCommandeSolo)   
+                this.setState({prixCommandeSolo: prixCommandeSolo});
+
+                this.calculatePrixTotal(); 
+}
 
 
-    /* priceByCake=()=>{
-        let id=this.state.tableGateaux[i].id; 
-    } */
+
+calculatePrixTotal =()=>{
+    let tableCommande=this.state.tableCommande;
+    let prixTotal=0; 
+    for(let data of tableCommande){
+        prixTotal+=setString(data.prixCommandeSolo);
+    };
+
+    console.log("le prix total est de" + prixTotal)
+} 
+
+afficherLesProduits(){
+    return ( 
+    <div className="marginDeBase">
+    <div class="container">
+        <div class="row">
+            {this.state.tableGateaux.map((Gateau, i) =>
+                <div class="col-sm-3">
+                    <div class="card text-center">
+                        <img class="card-img-top" src={Gateau.image} alt="brownie" />
+                        <div class="card-body">
+                            <h5 class="card-title">{Gateau.typeGateau}</h5>
+                            <p class="card-text">{Gateau.prix} euros</p>
+                            <button type="button" ref={Gateau.id} class="btn btn-primary" onClick={() => this.handleDescribe(i)}>Voir descriptif</button>
+                            <button type="button" class="btn btn-primary" onClick={() => this.handleAdd(i)}>Ajouter</button>
+                            <BasketAdding />
+                        </div>
+                    </div>
+                </div>
+            )}
+        </div>
+    </div>
+    
+    <h5>Ensemble des commandes</h5>
+    {this.state.tableCommande.map((cmd, i) => <li key={i}>
+        {i + 1} {cmd.typeGateau} {cmd.prix}
+    </li>)}
+    <h5>Prix total des commandes</h5>
+    {this.somme}
+</div>
+    )
+}
     handleDescribe() {
         alert("voici le descrpitif produit")
     }
@@ -82,6 +144,12 @@ class Catalogue extends Component {
     render() {
 
         return (
+<<<<<<< HEAD
+        
+            <div>
+                 {this.afficherLesProduits()}
+                 <button type="button" class="btn btn-primary" onClick={() => this.calculatePrixTotal()}>Somme totale</button>
+=======
             <div className="marginDeBase">
                 <div className="container">
                     <div className="row">
@@ -108,7 +176,9 @@ class Catalogue extends Component {
                 </li>)}
                 <h5>PRix total des commandes</h5>
                 {this.somme}
+>>>>>>> 482714ff2b280f6c09c51f5d1d49c9eb6cb2309b
             </div>
+           
         );
     }
 }
