@@ -18,7 +18,7 @@ class GestionProduits extends Component {
     importBDD = () => {
         BDDaxiosProduits.getDonnees((data) => {
             this.setState({ tabProduits: data },
-                () => console.log(this.state.tabProduits));
+                () => console.table(this.state.tabProduits));
         });
 
     }
@@ -59,13 +59,13 @@ class GestionProduits extends Component {
         newProduct.description = e.target.description.value;
         newProduct.price = e.target.price.value;
         newProduct.image = e.target.image.value;
-        if (e.target.true.value === "oui") {
+        if (e.target.isRecomanded.value === "oui" || "Oui" || "O" || "o") {
             newProduct.isRecomanded = true;
-        }
-        if (e.target.false.value === "non") {
+        } else {
             newProduct.isRecomanded = false;
         }
-        //newProduct.isRecomanded = false;
+        console.log(e.target.isRecomanded.value);
+        //newProduct.isRecomanded = e.target.isRecomanded.value;
         newProduct.size = e.target.size.value;
         newProduct.base = e.target.base.value;
         console.log("*************");
@@ -76,7 +76,7 @@ class GestionProduits extends Component {
         e.target.description.value = '';
         e.target.price.value = '';
         e.target.image.value = '';
-        newProduct.isRecomanded = '';
+        e.target.isRecomanded = '';
         e.target.size.value = '';
         e.target.base.value = '';
     }
@@ -141,26 +141,8 @@ class GestionProduits extends Component {
                                         </div>
                                         {/* BTN radio true false pour l'affichage en première page */}
                                         <div className="form-group">
-                                            {/* <label htmlFor="image">Le produit doit-il être sur la page d'accueil ?</label>
-                                            <div className="form-check form-check-inline">
-                                                <input className="form-check-input" type="radio" id="true" value="option1" />
-                                                <label className="form-check-label" htmlFor="true">Oui</label>
-                                                <input className="form-check-input" type="radio" id="false" value="option2" />
-                                                <label className="form-check-label" htmlFor="false">Non</label>
-                                            </div> */}
-                                            <label htmlFor="image">Le produit doit-il être sur la page d'accueil ?</label>
-                                            <div className="form-check">
-                                                <input className="form-check-input" type="radio" name="exampleRadios" id="true" value="oui" />
-                                                <label className="form-check-label" htmlFor="exampleRadios1">
-                                                    Oui
-                                            </label>
-                                            </div>
-                                            <div className="form-check">
-                                                <input className="form-check-input" type="radio" name="exampleRadios" id="false" value="non" />
-                                                <label className="form-check-label" htmlFor="exampleRadios2">
-                                                    Non
-                                            </label>
-                                            </div>
+                                            <label htmlFor="isRecomanded">Le produit doit-il être mis sur la page d'accueil ? (Oui, oui, O, o)</label>
+                                            <input type="text" id="isRecomanded" className="form-control" />
                                         </div>
                                         <div className="form-group">
                                             <label htmlFor="size">Nombre de parts</label>
