@@ -8,8 +8,13 @@ import Account from './component/moncompte/Account';
 import Panier from './component/panier/Panier';
 import Footer from './component/Footer';
 import FAQ from './component/FAQ';
+import Admin from './component/admin/Admin';
+import Gestion from './component/admin/Gestion';
 
 import logo from './img/logo-CakeMania.png';
+import GestionClient from './component/admin/GestionClient';
+import GestionProduits from './component/admin/GestionProduits';
+import GestionCommandes from './component/admin/GestionCommandes';
 
 class App extends Component {
   render() {
@@ -23,6 +28,13 @@ class App extends Component {
           <Route path="/account" component={Account} />
           <Route path="/basket" component={Panier} />
           <Route path="/faq" component={FAQ} />
+          {/* Administration du site */}
+          <Route path="/admin" component={Admin} />
+          <Route path="/adminGestion" component={Gestion} />
+          <Route path="/adminGestionClients" component={GestionClient} />
+          <Route path="/adminGestionProduits" component={GestionProduits} />
+          <Route path="/adminGestionCommandes" component={GestionCommandes} />
+          {/* Fin administration du site */}
 
               <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
                 <div className="container">
@@ -37,8 +49,8 @@ class App extends Component {
                     <ul className="nav navbar-nav ml-auto">
                       <li className="nav-item mr-4 navButton my-2"><Link to="/products">Catalogue</Link></li>
                       <li className="nav-item mr-4 navButton my-2"><Link to="/contact">Nous contacter</Link></li>
-                      <li className="nav-item mr-4 navButton my-2"><Link to="/account">Mon compte</Link></li>
-                      <li className="nav-item mr-4 navButton my-2"><Link to="/basket">Panier</Link></li>
+                      <li className="nav-item mr-4 navButton my-2"><Link to="/account"><i className="fas fa-user small"></i> Mon compte</Link></li>
+                      <li className="nav-item mr-4 navButton my-2"><Link to="/basket"><i className="fas fa-shopping-basket small"></i> Panier</Link></li>
                     </ul>
                   </div>
                 </div>

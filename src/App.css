@@ -1,5 +1,3 @@
-
-
 #logo {
   max-width: 15rem;
 }
@@ -12,4 +10,8 @@
 .navButton a:hover {
   text-decoration: none;
   border-bottom: 0.2rem solid #ff7979;
+}
+
+i.small {
+  font-size: 1rem;
 }

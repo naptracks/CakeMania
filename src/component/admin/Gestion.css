@@ -1,0 +1,18 @@
+.marginDeBase{
+    margin-top: 6.2rem;
+    margin-bottom: 3.2rem;
+}
+
+#gestionAdminCard .card{
+    padding: 0;
+    margin: 1rem;
+    border: none;
+}
+
+a{
+    color: #535c68;
+}
+
+a h3{
+    color: #ff7979;
+}
