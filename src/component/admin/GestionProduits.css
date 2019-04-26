@@ -1,6 +1,7 @@
 .card{
     border: none;
     padding: 0;
+    margin: 1rem;
 }
 
 #creationProduit.card {

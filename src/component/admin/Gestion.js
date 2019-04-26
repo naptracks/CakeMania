@@ -20,7 +20,7 @@ class Gestion extends Component {
                 <div className="row" id="gestionAdminCard">
                     <div className="col card" >
                         <Link to="/adminGestionClients">
-                            <img src={imgAdminClients} className="card-img-top" alt="image gestion client" />
+                            <img src={imgAdminClients} className="card-img-top" alt="imgClient" />
                             <div className="card-body">
                                 <h3>Gestion des clients</h3>
                                 <p>Pour la gestion des clients et de la BDD</p>
@@ -29,7 +29,7 @@ class Gestion extends Component {
                     </div>
                     <div className="col card" >
                         <Link to="/adminGestionCommandes">
-                            <img src={imgAdminCommandes} className="card-img-top" alt="image gestion commandes" />
+                            <img src={imgAdminCommandes} className="card-img-top" alt="imgCommandes" />
                             <div className="card-body">
                                 <h3>Gestion des commandes</h3>
                                 <p>Pour la gestion des commandes</p>
@@ -38,7 +38,7 @@ class Gestion extends Component {
                     </div>
                     <div className="col card" >
                         <Link to="/adminGestionProduits">
-                            <img src={imgAdminProduits} className="card-img-top" alt="image gestion produits" />
+                            <img src={imgAdminProduits} className="card-img-top" alt="imgProduits" />
                             <div className="card-body">
                                 <h3>Gestion des produits</h3>
                                 <p>Ajouter, mettre à jour ou supprimer des prduits</p>
