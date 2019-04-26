@@ -4,34 +4,43 @@ import Filtre from './Filtres/Filtres'
  */
 import BasketAdding from './BasketAdding';
 import './Catalogue.css';
+import BDDaxiosProduits from '../../BDD/BDDaxiosProduits';
+import ClassProduit from '../../classe/ClassProduit';
 
 class Catalogue extends Component {
 
     cakeSelected;
+    //ANCIEN CONSTRUCTOR
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+
+    //         tableGateaux: [
+    //             { id: 0, typeGateau: 'Brownie', prix: 12, image: "https://s1.qwant.com/thumbr/0x380/0/c/da91e10bb3f64e97632a4cff987e61fe816a4c68beef060065e0f0b08f2f04/IMG_9331-1400x933.jpg?u=http%3A%2F%2Fblog.zodio.fr%2Fwp-content%2Fuploads%2F2016%2F03%2FIMG_9331-1400x933.jpg&q=0&b=1&p=0&a=1" },
+    //             { id: 1, typeGateau: 'Apple-pie', prix: 15, image: "https://s1.qwant.com/thumbr/0x380/0/c/da91e10bb3f64e97632a4cff987e61fe816a4c68beef060065e0f0b08f2f04/IMG_9331-1400x933.jpg?u=http%3A%2F%2Fblog.zodio.fr%2Fwp-content%2Fuploads%2F2016%2F03%2FIMG_9331-1400x933.jpg&q=0&b=1&p=0&a=1" },
+    //             { id: 2, typeGateau: 'Cupcake-blueberry', prix: 12, image: "https://s1.qwant.com/thumbr/0x380/0/c/da91e10bb3f64e97632a4cff987e61fe816a4c68beef060065e0f0b08f2f04/IMG_9331-1400x933.jpg?u=http%3A%2F%2Fblog.zodio.fr%2Fwp-content%2Fuploads%2F2016%2F03%2FIMG_9331-1400x933.jpg&q=0&b=1&p=0&a=1" },
+    //             { id: 3, typeGateau: 'Muffin-choco', prix: 8, image: "https://s1.qwant.com/thumbr/0x380/0/c/da91e10bb3f64e97632a4cff987e61fe816a4c68beef060065e0f0b08f2f04/IMG_9331-1400x933.jpg?u=http%3A%2F%2Fblog.zodio.fr%2Fwp-content%2Fuploads%2F2016%2F03%2FIMG_9331-1400x933.jpg&q=0&b=1&p=0&a=1" },
+    //             { id: 4, typeGateau: 'Tartelette-fruit', prix: 12, image: "https://s1.qwant.com/thumbr/0x380/0/c/da91e10bb3f64e97632a4cff987e61fe816a4c68beef060065e0f0b08f2f04/IMG_9331-1400x933.jpg?u=http%3A%2F%2Fblog.zodio.fr%2Fwp-content%2Fuploads%2F2016%2F03%2FIMG_9331-1400x933.jpg&q=0&b=1&p=0&a=1" },
+    //             { id: 5, typeGateau: "Gateau aux prunes", prix: 7, image: "https://s1.qwant.com/thumbr/0x380/0/c/da91e10bb3f64e97632a4cff987e61fe816a4c68beef060065e0f0b08f2f04/IMG_9331-1400x933.jpg?u=http%3A%2F%2Fblog.zodio.fr%2Fwp-content%2Fuploads%2F2016%2F03%2FIMG_9331-1400x933.jpg&q=0&b=1&p=0&a=1" },
+    //             { id: 6, typeGateau: "Gateau yahourt", prix: 12, image: "https://s1.qwant.com/thumbr/0x380/0/c/da91e10bb3f64e97632a4cff987e61fe816a4c68beef060065e0f0b08f2f04/IMG_9331-1400x933.jpg?u=http%3A%2F%2Fblog.zodio.fr%2Fwp-content%2Fuploads%2F2016%2F03%2FIMG_9331-1400x933.jpg&q=0&b=1&p=0&a=1" },
+    //             { id: 7, typeGateau: "Gateau de Mamie", prix: 5, image: "https://s1.qwant.com/thumbr/0x380/0/c/da91e10bb3f64e97632a4cff987e61fe816a4c68beef060065e0f0b08f2f04/IMG_9331-1400x933.jpg?u=http%3A%2F%2Fblog.zodio.fr%2Fwp-content%2Fuploads%2F2016%2F03%2FIMG_9331-1400x933.jpg&q=0&b=1&p=0&a=1" },
+    //         ],
+
+    //         tableCommande: []
+    //     }
+    // }
     constructor(props) {
         super(props);
         this.state = {
-
-            tableGateaux: [
-                { id: 0, typeGateau: 'Brownie', prix: 12, image: "https://s1.qwant.com/thumbr/0x380/0/c/da91e10bb3f64e97632a4cff987e61fe816a4c68beef060065e0f0b08f2f04/IMG_9331-1400x933.jpg?u=http%3A%2F%2Fblog.zodio.fr%2Fwp-content%2Fuploads%2F2016%2F03%2FIMG_9331-1400x933.jpg&q=0&b=1&p=0&a=1" },
-                { id: 1, typeGateau: 'Apple-pie', prix: 15, image: "https://s1.qwant.com/thumbr/0x380/0/c/da91e10bb3f64e97632a4cff987e61fe816a4c68beef060065e0f0b08f2f04/IMG_9331-1400x933.jpg?u=http%3A%2F%2Fblog.zodio.fr%2Fwp-content%2Fuploads%2F2016%2F03%2FIMG_9331-1400x933.jpg&q=0&b=1&p=0&a=1" },
-                { id: 2, typeGateau: 'Cupcake-blueberry', prix: 12, image: "https://s1.qwant.com/thumbr/0x380/0/c/da91e10bb3f64e97632a4cff987e61fe816a4c68beef060065e0f0b08f2f04/IMG_9331-1400x933.jpg?u=http%3A%2F%2Fblog.zodio.fr%2Fwp-content%2Fuploads%2F2016%2F03%2FIMG_9331-1400x933.jpg&q=0&b=1&p=0&a=1" },
-                { id: 3, typeGateau: 'Muffin-choco', prix: 8, image: "https://s1.qwant.com/thumbr/0x380/0/c/da91e10bb3f64e97632a4cff987e61fe816a4c68beef060065e0f0b08f2f04/IMG_9331-1400x933.jpg?u=http%3A%2F%2Fblog.zodio.fr%2Fwp-content%2Fuploads%2F2016%2F03%2FIMG_9331-1400x933.jpg&q=0&b=1&p=0&a=1" },
-                { id: 4, typeGateau: 'Tartelette-fruit', prix: 12, image: "https://s1.qwant.com/thumbr/0x380/0/c/da91e10bb3f64e97632a4cff987e61fe816a4c68beef060065e0f0b08f2f04/IMG_9331-1400x933.jpg?u=http%3A%2F%2Fblog.zodio.fr%2Fwp-content%2Fuploads%2F2016%2F03%2FIMG_9331-1400x933.jpg&q=0&b=1&p=0&a=1" },
-                { id: 5, typeGateau: "Gateau aux prunes", prix: 7, image: "https://s1.qwant.com/thumbr/0x380/0/c/da91e10bb3f64e97632a4cff987e61fe816a4c68beef060065e0f0b08f2f04/IMG_9331-1400x933.jpg?u=http%3A%2F%2Fblog.zodio.fr%2Fwp-content%2Fuploads%2F2016%2F03%2FIMG_9331-1400x933.jpg&q=0&b=1&p=0&a=1" },
-                { id: 6, typeGateau: "Gateau yahourt", prix: 12, image: "https://s1.qwant.com/thumbr/0x380/0/c/da91e10bb3f64e97632a4cff987e61fe816a4c68beef060065e0f0b08f2f04/IMG_9331-1400x933.jpg?u=http%3A%2F%2Fblog.zodio.fr%2Fwp-content%2Fuploads%2F2016%2F03%2FIMG_9331-1400x933.jpg&q=0&b=1&p=0&a=1" },
-                { id: 7, typeGateau: "Gateau de Mamie", prix: 5, image: "https://s1.qwant.com/thumbr/0x380/0/c/da91e10bb3f64e97632a4cff987e61fe816a4c68beef060065e0f0b08f2f04/IMG_9331-1400x933.jpg?u=http%3A%2F%2Fblog.zodio.fr%2Fwp-content%2Fuploads%2F2016%2F03%2FIMG_9331-1400x933.jpg&q=0&b=1&p=0&a=1" },
-            ],
-
-            tableCommande: []
+            tableGateaux: [],
+            tableCommande: [],
+            articleSelection: new ClassProduit()
         }
     }
-
+    
 
     handleAdd = (i) => {
         console.log('test')
-        let count = 0;
-        let sommePartielle = 0;
         // let count = 0;
         // let sommePartielle = 0;
 
@@ -95,7 +104,7 @@ class Catalogue extends Component {
 
 
 calculatePrixTotal =()=>{
-    let tableCommande=this.state.tableCommande;
+    // let tableCommande=this.state.tableCommande;
     let prixTotal=0; 
     // for(let data of tableCommande){
     //     prixTotal+=setString(data.prixCommandeSolo);
@@ -114,10 +123,9 @@ afficherLesProduits(){
                     <div class="card text-center">
                         <img class="card-img-top" src={Gateau.image} alt="brownie" />
                         <div class="card-body">
-                            <h5 class="card-title">{Gateau.typeGateau}</h5>
-                            <p class="card-text">{Gateau.prix} euros</p>
-                            <button type="button" ref={Gateau.id} class="btn btn-primary" onClick={() => this.handleDescribe(i)}>Voir descriptif</button>
-                            <button type="button" class="btn btn-primary" onClick={() => this.handleAdd(i)}>Ajouter</button>
+                            <h5 class="card-title">{Gateau.name}</h5>
+                            <p class="card-text">{Gateau.price} euros</p>
+                            <button type="button" ref={Gateau.id} class="btn btn-primary" onClick={this.select} id={Gateau.id}>Ajouter</button>
                             <BasketAdding />
                         </div>
                     </div>
@@ -139,18 +147,39 @@ afficherLesProduits(){
         alert("voici le descrpitif produit");
     }
 
-    render() {
+    // ************************** MODIF LN BDD ******************************
+    // IMPORT BDD
+    importBDD = () => {
+        BDDaxiosProduits.getDonnees((data) => {
+            this.setState({ tableGateaux: data },
+                () => console.table(this.state.tableGateaux));
+        });
+    }
+    // INITIALISATION DE LA BDD AU LANCEMENT DE L'APPEL
+    componentDidMount() {
+        this.importBDD();
+    }
 
+    //SELECTION D'UN PRODUIT POUR POUVOIR LIÉ CET ARTICLE SPÉCIFIQUE À SA FICHE PRODUIT
+    select = (e) => {
+        let id = e.target.id;
+        let gateau = this.state.tableGateaux.filter((item) => parseInt(item.id) === parseInt(id));
+        if (gateau.length > 0) {
+            gateau = gateau[0];
+            this.props.history.push(`/ficheProduit`, {state: { gateau :gateau }});
+        }
+    }
+
+    // ************************** FIN MODIF LN ******************************
+
+    render() {
         return (
-        
             <div>
                  {this.afficherLesProduits()}
                  <button type="button" class="btn btn-primary" onClick={() => this.calculatePrixTotal()}>Somme totale</button>
             </div>
-           
         );
     }
 }
-
 
 export default Catalogue;

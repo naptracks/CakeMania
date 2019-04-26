@@ -24,7 +24,7 @@ class App extends Component {
         <BrowserRouter>
           <Route exact path="/" component={Homepage} />
           {/* Si besoin de props, on utilise cette syntaxe : */}
-          <Route path="/products" component={() => {return <Catalogue />}} />
+          <Route path="/products" component={(props) => {return <Catalogue  {...props} />}} />
           <Route path="/contact" component={ContactUs} />
           <Route path="/account" component={Account} />
           <Route path="/basket" component={Panier} />

@@ -1,24 +1,23 @@
 import React, { Component } from 'react';
 import './FicheProduit.css';
-import monImageTest from '../../img/produits/apple-pie.png';
-//import ClassProduit from '../../classe/ClassProduit';
 
 class FicheProduit extends Component {
     constructor(props) {
         super(props);
+        // console.log(props);
+        // console.log(props.location.state.state.gateau.name);
         this.state = {
-            quantity: 0
+            quantity: 0,
+            prixTotal: 0
         }
     }
-    
-
     //fonction quantité d'article(s)
     addQuantity = (e) => {
         e.preventDefault();
         if(this.state.quantity >=0) {
             this.setState({
                 quantity: this.state.quantity+1
-            })
+            }, () => this.calculeTotal());
         }
     }
 
@@ -27,8 +26,14 @@ class FicheProduit extends Component {
         if(this.state.quantity >0) {
             this.setState({
                 quantity: this.state.quantity-1
-            })
+            }, () => this.calculeTotal());
         }
+    }
+
+    calculeTotal = () => {
+        this.setState({
+            prixTotal: Number(this.props.location.state.state.gateau.price * this.state.quantity)
+        });
     }
 
     render() {
@@ -36,14 +41,14 @@ class FicheProduit extends Component {
             <div className="marginDeBase container">
                 <div className="row">
                     <div className="col">
-                        <img src={monImageTest} alt="" className="img-fluid" />
+                        <img src={this.props.location.state.state.gateau.image} alt="" className="img-fluid" />
                     </div>
                     <div className="col">
-                        <h2>Titre produit</h2>
+                        <h2>{this.props.location.state.state.gateau.name}</h2>
                         <hr />
-                        <p>Descriptif</p>
-                        <p>Nombre de part : </p>
-                        <p>Prix</p>
+                        <p>{this.props.location.state.state.gateau.description}</p>
+                        <p>Nombre de part : {this.props.location.state.state.gateau.size}</p>
+                        <p>{this.props.location.state.state.gateau.price} €</p>
                         <form>
                             <div className="form-inline">
                                 <label htmlFor="quantity">Combien de titre produit voulez-vous ?</label>
@@ -72,7 +77,7 @@ class FicheProduit extends Component {
                                     </button>
                                 </div>
                             </div>
-                            <p>Prix total : 0</p>
+                            <p>Prix total : {this.state.prixTotal} €</p>
                             <button
                                 className="btn btn-primary">
                                 Ajouter au panier
