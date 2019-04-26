@@ -8,7 +8,8 @@ class GestionProduits extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            tabProduits: []
+            tabProduits: [],
+            produitSel: new ClassProduit()
         }
     }
 
@@ -24,6 +25,17 @@ class GestionProduits extends Component {
     // INITIALISATION DE LA BDD AU LANCEMENT DE L'APPEL
     componentDidMount() {
         this.importBDD();
+    }
+
+    select = (e) => {
+        let id = e.target.id;
+        let co = this.state.tabProduits.filter((item) => item.id === id);
+        if (co.length > 0) {
+            co = co[0];
+            this.setState({
+                produitSel: co
+            }, () => console.log(co))
+        }
     }
 
     goBack = () => {
@@ -42,8 +54,8 @@ class GestionProduits extends Component {
                     <p>{item.description}</p>
                     <p>{item.price} €</p>
                     <div>
-                        <button className="btn btn-primary" data-toggle="modal" data-target="#modif">Modifier</button>
-                        <button className="btn btn-primary">Supprimer</button>
+                        <button onClick={this.select} className="btn btn-primary" data-toggle="modal" data-target="#modif" id={item.id}>Modifier</button>
+                        <button className="btn btn-primary" >Supprimer</button>
                     </div>
                 </div>
             </div>
@@ -77,21 +89,20 @@ class GestionProduits extends Component {
         e.target.base.value = '';
     }
 
-    // modifProduit = (e) => {
-    //     e.preventDefault();
-    //     //statut de selection ?
-    //     let modifProduit;
-    //     modifProduit.name = e.target.name.value;
-    //     modifProduit.description = e.target.description.value;
-    //     modifProduit.price = e.target.price.value;
-    //     modifProduit.image = e.target.image.value;
-    //     modifProduit.isRecomanded = newProduct.isRecomanded;
-    //     modifProduit.size = e.target.size.value;
-    //     modifProduit.base = e.target.base.value;
+    modifProduit = (e) => {
+        e.preventDefault();
+        let modifProduit = new ClassProduit();
+        modifProduit.id = this.state.produitSel.id;
+        modifProduit.name = e.target.fname.value;
+        modifProduit.description = e.target.description.value;
+        modifProduit.price = e.target.price.value;
+        modifProduit.image = e.target.image.value;
+        modifProduit.isRecomanded = e.target.isRecomanded.value;
+        modifProduit.size = e.target.size.value;
+        modifProduit.base = e.target.base.value;
 
-    //     BDDaxiosProduits.putDonnees(modifProduit); // + callback
-
-    // }
+        BDDaxiosProduits.putDonnees(modifProduit, this.importBDD);
+    }
 
     render() {
         return (
@@ -167,7 +178,7 @@ class GestionProduits extends Component {
                 <div id="toutNosProduits" className="row justify-content-around">
                     {this.affichageProduits()}
                 </div>
-                {/* MODAL d'ajout d'un produit */}
+                {/* MODAL modif d'un produit */}
                 <div id="modif" className="modal" tabIndex="-1" role="dialog">
                     <div className="modal-dialog" role="document">
                         <div className="modal-content">
@@ -181,31 +192,52 @@ class GestionProduits extends Component {
                                 <form onSubmit={this.modifProduit}>
                                     <div className="form-group">
                                         <label htmlFor="name">Nom du produit</label>
-                                        <input type="text" id="name" className="form-control" />
+                                        <input
+                                            type="text"
+                                            id="name"
+                                            name="fname"
+                                            className="form-control"
+                                            defaultValue={this.state.produitSel.name} />
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="description">Description</label>
-                                        <input type="text" id="description" className="form-control" />
+                                        <input 
+                                            type="text" 
+                                            name="description" 
+                                            id="description" 
+                                            className="form-control" 
+                                            defaultValue={this.state.produitSel.description}/>
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="price">Prix (mettre '.' à la place des virgules)</label>
-                                        <input type="text" id="price" className="form-control" />
+                                        <input 
+                                            type="text" 
+                                            name="price" 
+                                            id="price" 
+                                            className="form-control" 
+                                            defaultValue={this.state.produitSel.price}/>
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="image">Mettre l'url de l'image</label>
-                                        <input type="text" id="image" className="form-control" />
+                                        <input 
+                                            type="text" 
+                                            name="image" 
+                                            id="image" 
+                                            className="form-control" 
+                                            defaultValue={this.state.produitSel.image}/>
                                     </div>
                                     {/* BTN radio true false pour l'affichage en première page */}
-
-
-
+                                    <div className="form-group">
+                                        <label htmlFor="isRecomanded">Le produit doit-il être mis sur la page d'accueil ? (Oui, oui, O, o)</label>
+                                        <input type="text" name="isRecomanded" id="isRecomanded" className="form-control" />
+                                    </div>
                                     <div className="form-group">
                                         <label htmlFor="size">Nombre de parts</label>
-                                        <input type="text" id="size" className="form-control" />
+                                        <input type="text" id="size" name="size" className="form-control" />
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="base">Base du gâteau</label>
-                                        <select className="form-control" id="base">
+                                        <select className="form-control" id="base" name="base">
                                             <option>Vanille</option>
                                             <option>Chocolat</option>
                                             <option>Crème patissière</option>
