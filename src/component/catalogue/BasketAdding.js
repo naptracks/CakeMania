@@ -2,13 +2,7 @@ import React, { Component } from 'react';
 
 
 class BasketAdding extends Component {
-    constructor(props){
-        super(props); 
 
-    }
-
-
-   
     render() {
         return (
             <div>
