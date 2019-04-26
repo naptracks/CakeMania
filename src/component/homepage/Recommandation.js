@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import BDDaxiosProduits from '../../BDD/BDDaxiosProduits';
-import Button from '../Button';
 
 class Recommandation extends Component {
     constructor(props) {
@@ -28,7 +27,7 @@ class Recommandation extends Component {
         return (
             this.state.tabProduits.map((item) =>
             item.isRecomanded ? 
-            <div className="col-3 card" key={item.id}>
+            <div className="col-10 col-md-5 col-lg-3 card" key={item.id}>
                 <img src={item.image} className="card-img-top" alt="imgClient" />
                 <div className="card-body text-center">
                     <h4>{item.name}</h4>
