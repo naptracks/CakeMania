@@ -14,7 +14,7 @@ class Recommandation extends Component {
     importBDD = () => {
         BDDaxiosProduits.getDonnees((data) => {
             this.setState({ tabProduits: data },
-                () => console.log(this.state.tabProduits));
+                () => console.table(this.state.tabProduits));
         });
 
     }
@@ -28,7 +28,7 @@ class Recommandation extends Component {
         return (
             this.state.tabProduits.map((item) =>
             item.isRecomanded ? 
-            <div className="col-3 card">
+            <div className="col-3 card" key={item.id}>
                 <img src={item.image} className="card-img-top" alt="image gestion client" />
                 <div className="card-body text-center">
                     <h4>{item.name}</h4>
@@ -49,7 +49,7 @@ class Recommandation extends Component {
             <div className="container mt-4">
                 <h2>Découvrez nos produits phares !</h2>
                 <hr />
-                <div className="row">
+                <div className="row justify-content-around">
                     {this.affichageProduits()}
                 </div>
             </div>

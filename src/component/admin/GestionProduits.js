@@ -65,7 +65,7 @@ class GestionProduits extends Component {
                         </div>
                     </div>
                     {/* MODAL d'ajout d'un produit */}
-                    <div id="add" className="modal" tabindex="-1" role="dialog">
+                    <div id="add" className="modal" tabIndex="-1" role="dialog">
                         <div className="modal-dialog" role="document">
                             <div className="modal-content">
                                 <div className="modal-header">
