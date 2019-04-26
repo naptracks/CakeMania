@@ -138,7 +138,7 @@ afficherLesProduits(){
     )
 }
     handleDescribe() {
-        alert("voici le descrpitif produit")
+        alert("voici le descrpitif produit");
     }
 
     render() {

@@ -5,6 +5,7 @@ import {BrowserRouter,Route,Link} from 'react-router-dom';
 import MyAccount from './MyAccount';
 import MyOrders from './MyOrders';
 import MyHistoryOrders from './MyHistoryOrders';
+import '../moncompte/Account.css';
 
 class Account extends Component {
     render() {
