@@ -58,7 +58,7 @@ class GestionClient extends Component {
                         <form className="col-4">
                             <div className="form-group">
                                 <label for="searchClient">Rechercher un client</label>
-                                <input type="" class="form-control" id="searchClient"></input>
+                                <input type="" className="form-control" id="searchClient"></input>
                             </div>
                         </form>
                         {/* Appel de la fiche client */}

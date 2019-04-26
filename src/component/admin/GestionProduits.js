@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './GestionProduits.css';
 import imgNewProduct from '../../img/admin/adminGestionNewProduct.png';
-import Button from '../Button';
 import BDDaxiosProduits from '../../BDD/BDDaxiosProduits';
 import ClassProduit from '../../classe/ClassProduit';
 
@@ -37,7 +36,7 @@ class GestionProduits extends Component {
     affichageProduits = () => {
         return this.state.tabProduits.map((item) =>
             <div className="col-3 card" key={item.id}>
-                <img src={item.image} className="card-img-top" alt="image gestion client" />
+                <img src={item.image} className="card-img-top" alt="" />
                 <div className="card-body text-center">
                     <h4>{item.name}</h4>
                     <p>{item.description}</p>
@@ -52,21 +51,18 @@ class GestionProduits extends Component {
     }
 
     addNewProduit = (e) => {
-        //http://helenevermaut.com/wp-content/uploads/2019/04/gateau-au-chocolat.png
         e.preventDefault();
         let newProduct = new ClassProduit();
         newProduct.name = e.target.name.value;
         newProduct.description = e.target.description.value;
-        newProduct.price = e.target.price.value;
+        newProduct.price = Number(e.target.price.value);
         newProduct.image = e.target.image.value;
         if (e.target.isRecomanded.value === "oui" || "Oui" || "O" || "o") {
             newProduct.isRecomanded = true;
         } else {
             newProduct.isRecomanded = false;
         }
-        console.log(e.target.isRecomanded.value);
-        //newProduct.isRecomanded = e.target.isRecomanded.value;
-        newProduct.size = e.target.size.value;
+        newProduct.size = Number(e.target.size.value);
         newProduct.base = e.target.base.value;
         console.log("*************");
         BDDaxiosProduits.postDonnees(newProduct, this.importBDD);
@@ -104,7 +100,7 @@ class GestionProduits extends Component {
                 <div className="mt-3">
                     <h2>Gestion des produits</h2>
                     <div className="col-4 card" id="creationProduit" data-toggle="modal" data-target="#add">
-                        <img src={imgNewProduct} className="card-img-top" alt="image gestion client" />
+                        <img src={imgNewProduct} className="card-img-top" alt="" />
                         <div className="card-body text-center">
                             <i className="fas fa-plus-circle"></i>
                             <hr />
