@@ -6,35 +6,42 @@ class BDDaxiosProduits {
     static getDonnees = (callback) => {
         axios.get(url)
             .then(
-                (response) => 
+                (response) =>
                     callback(response.data)
-                
+
             )
             .catch((error) => console.log(error));
     }
-    static postDonnees = (data, callback) => {
+    static postDonnees = (data, callback = undefined) => {
         axios.post(url, data)
             .then(
-                (response) => 
-                    callback(response.data)
-                
+                (response) => {
+                    if (callback) {
+                        callback()
+                    }
+                }
+
             )
             .catch((error) => console.log(error));
     }
-    static putDonnees = (data, callback) => {
+    static putDonnees = (data, callback = undefined) => {
         axios.put(url + '/' + data.id, data)
             .then(
                 (response) => {
-                    callback(response.data);
+                    if (callback) {
+                        callback()
+                    }
                 }
             )
             .catch((error) => console.log(error));
     }
-    static deleteDonnees = (data, callback) => {
+    static deleteDonnees = (data, callback = undefined) => {
         axios.delete(url + '/' + data.id)
             .then(
                 (response) => {
-                    callback(response.data);
+                    if (callback) {
+                        callback()
+                    }
                 }
             )
             .catch((error) => console.log(error));

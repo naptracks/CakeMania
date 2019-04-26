@@ -29,7 +29,7 @@ class Recommandation extends Component {
             this.state.tabProduits.map((item) =>
             item.isRecomanded ? 
             <div className="col-3 card" key={item.id}>
-                <img src={item.image} className="card-img-top" alt="image gestion client" />
+                <img src={item.image} className="card-img-top" alt="imgClient" />
                 <div className="card-body text-center">
                     <h4>{item.name}</h4>
                     <p>{item.description}</p>

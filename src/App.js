@@ -49,8 +49,8 @@ class App extends Component {
                     <ul className="nav navbar-nav ml-auto">
                       <li className="nav-item mr-4 navButton my-2"><Link to="/products">Catalogue</Link></li>
                       <li className="nav-item mr-4 navButton my-2"><Link to="/contact">Nous contacter</Link></li>
-                      <li className="nav-item mr-4 navButton my-2"><Link to="/account">Mon compte</Link></li>
-                      <li className="nav-item mr-4 navButton my-2"><Link to="/basket">Panier</Link></li>
+                      <li className="nav-item mr-4 navButton my-2"><Link to="/account"><i className="fas fa-user small"></i> Mon compte</Link></li>
+                      <li className="nav-item mr-4 navButton my-2"><Link to="/basket"><i className="fas fa-shopping-basket small"></i> Panier</Link></li>
                     </ul>
                   </div>
                 </div>
