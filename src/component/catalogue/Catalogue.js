@@ -23,13 +23,7 @@ class Catalogue extends Component {
                 { id: 7, typeGateau: "Gateau de Mamie", prix: 5, image: "https://s1.qwant.com/thumbr/0x380/0/c/da91e10bb3f64e97632a4cff987e61fe816a4c68beef060065e0f0b08f2f04/IMG_9331-1400x933.jpg?u=http%3A%2F%2Fblog.zodio.fr%2Fwp-content%2Fuploads%2F2016%2F03%2FIMG_9331-1400x933.jpg&q=0&b=1&p=0&a=1" },
             ],
 
-<<<<<<< HEAD
             tableCommande: []
-=======
-            tableCommande: [
-                { idCommande: null, typeGateau: null, nbGateauSolo: null, prixCommandeSolo: null}
-            ]
->>>>>>> f298f8453316758abff278243b6fb77b1de5214f
         }
     }
 
