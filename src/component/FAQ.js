@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import './FAQ.css';
 
 class FAQ extends Component {
     render() {
         return (
-            <div className="pt-5 container">
+            <div className="pt-5 container" id="faq">
                 <div className="mt-5 row">
                     <div className="col-10">
                         <h2><i className="fa fa-book"></i></h2>

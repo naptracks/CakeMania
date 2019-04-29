@@ -12,7 +12,7 @@ class Account extends Component {
         return (
             
             <BrowserRouter>
-            <div className="mt-5 d-flex justify-content-center">
+            <div className="mt-5 d-flex justify-content-center" id="myAccount">
                 <MenuCompte>
                     <Link to="/accessAccount" className="m-3">
                     <ItemsMenuCards 
