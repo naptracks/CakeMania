@@ -1,22 +1,50 @@
 import React, { Component } from 'react';
+import BDDaxiosCommandes from '../../BDD/BDDaxiosCommandes';
+import './Panier.css';
 
 class Panier extends Component {
     state = {
         tabPanier: []
     }
+    /************************************/
+    // IMPORT DE LA BDD
+    importBDD = () => {
+        BDDaxiosCommandes.getDonnees((data) => {
+            this.setState({ tabPanier: data },
+                () => console.table(this.state.tabPanier));
+        });
+
+    }
+    // INITIALISATION DE LA BDD AU LANCEMENT DE L'APPEL
+    componentDidMount() {
+        this.importBDD();
+    }
+    /************************************/
 
     affichageTabPanier = () => {
         return this.state.tabPanier.map((item) =>
-            <tr>
-                <td>Mon article</td>
-                <td>Ma quantité</td>
-                <td>le prix unitaire</td>
-                <td>le prix total</td>
+            <tr key={item.id}>
+                <td>
+                    {this.affichageDesProduits}
+                    {/* {item.produits} */}
+                </td>
+                <td>{item.nbrProduit}</td>
+                <td>{item.totalPrix}</td>
+                <td>
+                    <button className="btn btn-primary">sup</button>
+                </td>
             </tr>
         );
     }
 
+    affichageDesProduits = () => {
+        return this.state.tabPanier.produits.map((produit) =>
+                `${produit}`
+        );
+    }
+
     render() {
+        console.log(this.state.tabPanier.produits);
         return (
             <div className="marginDeBase container">
                 <h2>Mon panier</h2>
@@ -27,12 +55,18 @@ class Panier extends Component {
                         <tr>
                             <th>Article</th>
                             <th>Quantité</th>
-                            <th>Prix unitaire</th>
                             <th>Prix total</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
                         {this.affichageTabPanier()}
+                        <tr id="totalTTC">
+                            <td>Prix total de la commande</td>
+                            <td></td>
+                            <td>le prix total</td>
+                            <td></td>
+                        </tr>
                     </tbody>
                 </table>
             </div>

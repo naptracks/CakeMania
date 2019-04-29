@@ -1,3 +1,9 @@
 .marginDeBase{
     margin-top: 6.2rem;
 }
+
+#totalTTC{
+    background-color: #ff7979;
+    color: #ffffff;
+    font-weight: bold;
+}
