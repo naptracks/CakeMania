@@ -7,7 +7,7 @@ class Connexion extends Component {
 
     render() {
         return (
-            <div className="container my-5" id="fenetreConnexion">
+            <div className="container my-5 marginDeBase" id="fenetreConnexion">
                 <div className="row justify-content-around">
                     <div className="col-4 card p-3">
                         <i class="fas fa-user text-center"></i>

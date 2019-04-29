@@ -23,23 +23,19 @@ class Panier extends Component {
 
     affichageTabPanier = () => {
         return this.state.tabPanier.map((item) =>
+        
             <tr key={item.id}>
                 <td>
-                    {this.affichageDesProduits}
-                    {/* {item.produits} */}
+                {console.log(item)}
+                    {/* {this.affichageDesProduits} */}
+                    {item.produits.map( product => <p>{product}</p>)}
                 </td>
-                <td>{item.nbrProduit}</td>
+                <td>{item.nbrProduit.map((cookie) => <p>{cookie}</p>)}</td>
                 <td>{item.totalPrix}</td>
                 <td>
                     <button className="btn btn-primary">sup</button>
                 </td>
             </tr>
-        );
-    }
-
-    affichageDesProduits = () => {
-        return this.state.tabPanier.produits.map((produit) =>
-                `${produit}`
         );
     }
 
