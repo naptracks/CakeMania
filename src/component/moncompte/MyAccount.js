@@ -58,13 +58,6 @@ class MyAccount extends Component {
          
     }
     
-
-
-
-
-
-
-
     // HANDLER SUBMIT FORMULAIRE MODAL
     userNameSubmit = (e)=>{
         e.preventDefault();
@@ -81,9 +74,6 @@ class MyAccount extends Component {
     
     }
     
-
-
-
 
     render() {
         return (
@@ -123,6 +113,7 @@ class MyAccount extends Component {
                          id="formName"
                          onChange={(e)=>this.setState ({ userNameInput : e.target.value})}
                          />
+
                          <br/>
                          <label htmlFor="formName">Adresse:</label> <br/>
                          <input 
@@ -131,6 +122,7 @@ class MyAccount extends Component {
                          id="formName"
                          onChange={this.inputChangeAdress}
                          />
+
                          <br/>
                          <label htmlFor="formName">Adresse de livraison:</label> <br/>
                          <input 
