@@ -21,93 +21,6 @@ class Catalogue extends Component {
             //pour ajout � la commande
             articleCommande : new ClassCommandes(),
         }
-    
-  /*   handleAdd = (i) => {
-        console.log('test')
-
-        let tableCommande = this.state.tableCommande;
-
-        let id = this.state.tableGateaux[i].id;
-        let typeGateau = this.state.tableGateaux[i].typeGateau;
-        let prix = this.state.tableGateaux[i].prix;
-
-        let commande = {
-            id,
-            typeGateau,
-            prix,
-        }
-
-        tableCommande.push(commande);
-       
-
-        this.setState({
-            tableCommande: tableCommande
-        })
-
-        console.table(tableCommande);
-
-        this.calculatePrice(i) 
-    };
-
-    handleRemove(i){
-        console.log('test')
-        // let count = 0;
-        // let sommePartielle = 0;
-
-
-        let tableCommande = this.state.tableCommande;
-
-        let id = this.state.tableGateaux[i].id;
-        let typeGateau = this.state.tableGateaux[i].typeGateau;
-        let prix = this.state.tableGateaux[i].prix;
-
-        let commande = {
-            id,
-            typeGateau,
-            prix,
-        }
-
-        tableCommande.splice(commande);
-      
-
-        this.setState({
-            tableCommande: tableCommande
-        })
-
-        console.table(tableCommande);
-
-        this.calculatePrice(i) 
-    }
-
-
-    calculatePrice = (i) => {
-        
-        let tableCommande=this.state.tableCommande; 
-        let tableGateaux=this.state.tableGateaux;
-
-        let nbGateauSolo=0; 
-        let prixCommandeSolo;
-
-        let prixCake=0;
-        
-
-        for(let data of tableCommande){
-            
-            if (tableGateaux[i].id === data.id) {
-                nbGateauSolo++; 
-                prixCake=tableGateaux[i].prix;
-                
-                this.setState({nbGateauSolo: nbGateauSolo});
-            }
-            
-    }   
-                prixCommandeSolo=prixCake*nbGateauSolo;
-              
-                console.log("le prix pour le gateau " + tableGateaux[i].typeGateau + " est " + prixCommandeSolo)   
-                this.setState({prixCommandeSolo: prixCommandeSolo});
-
-                this.calculatePrixTotal(); 
-} */
 
 calculatePrixTotal =()=>{
     // let tableCommande=this.state.tableCommande;
@@ -118,121 +31,9 @@ calculatePrixTotal =()=>{
 
     console.log("le prix total est de" + prixTotal)
 } 
-/* 
-addQuantity = id => {
-
-  
-    
-    if (this.state.nbrProduit >= 0) {
-      
-      this.setState(
-        {
-            nbrProduit: this.state.nbrProduit + 1
-          
-        },
-      /*   () => this.calculeTotal()
-      );
-    }
-  };
-
-takeOffQuantity = id => {
-  
-   
-    if (this.state.nbrProduit > 0) {
-     
-      this.setState(
-        {  
-            nbrProduit: this.state.nbrProduit - 1
-        },
-     /*    () => this.calculeTotal() 
-      );
-    }
-  }; */
-
-/*   calculeTotal = () => {
-    this.setState({
-      prixTotal: Number(
-        this.props.location.state.state.gateau.price * this.state.quantity
-      )
-    });
-  }; */
 
 afficherLesProduits(){
     return ( 
-
-
-   /* { <div className="marginDeBase">
-    <div class="container">
-        <div class="row">
-            {this.state.tableGateaux.map((Gateau, i) =>
-                <div class="col-sm-4">
-                    <div class="card text-center">
-                        <img class="card-img-top" src={Gateau.image} alt="brownie" />
-                        <div class="card-body">
-                            <h5 class="card-title">{Gateau.name}</h5>
-                            <p class="card-text">{Gateau.price} euros</p>
-
-                            <button type="button" ref={Gateau.id} class="btn btn-primary" onClick={this.select} id={Gateau.id}>Voir Fiche Produit</button>
-                          
-                           <form>
-                            <div className="form-inline">
-                                <label htmlFor="quantity">Combien de {Gateau.name} voulez-vous ?</label>
-                               
-                                <div className="containerButtons">
-                                <div class="row">
-                           
-                                    <button
-                                        type="button"
-                                        id="moins"
-                                        className="btn btn-primary"
-                                        onClick={this.takeOffQuantity}
-                                    >
-                                        -
-                                    </button>
-                         
-                                    <input
-                                        id="quantity"
-                                        name="maQuantite"
-                                        type="text"
-                                        className="text-center form-control"
-                                        value={this.state.quantity} />
-                           
-                                    <button
-                                        type="button"
-                                        id="plus"
-                                        className="btn btn-primary"
-                                        onClick={this.addQuantity}
-                                    >
-                                        +
-                                    </button>
-                             
-                                </div>
-                                </div>
-
-
-                            </div>
-
-                        
-                            </form>
-                           
-                            </div>
-                            <p>Prix total : {this.state.prixTotal} €</p>
-                            <BasketAdding />
-                        </div>
-                       
-                    </div>
-            
-            )}
-        </div>
-    </div> }
-    
-{/*     <h5>Ensemble des commandes</h5>
-    {this.state.tableCommande.map((cmd, i) => <li key={i}>
-        {i + 1} {cmd.typeGateau} {cmd.prix}
-    </li>)}
-    <h5>Prix total des commandes</h5>
-    {this.somme} }
-</div>*/
 
         <div>
         <p>Nbre total produits : {this.state.totalNbrProduit} </p>
@@ -314,7 +115,7 @@ afficherLesProduits(){
 
               articleSelection ={this.state.articleSelection}
               articleCommande={this.state.articleCommande}
-
+              nbrProduit={this.nbrProduit}
               //receiving instruction from first child (card) and second child (produit description)  
               addQuantity={this.handleAddQuantity}
               takeOffQuantity={this.handleTakeOffQuantity}
