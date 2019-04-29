@@ -27,9 +27,10 @@ class GestionProduits extends Component {
         this.importBDD();
     }
 
+    //selection du produit
     select = (e) => {
         let id = e.target.id;
-        let co = this.state.tabProduits.filter((item) => item.id === id);
+        let co = this.state.tabProduits.filter((item) => parseInt(item.id) === parseInt(id));
         if (co.length > 0) {
             co = co[0];
             this.setState({
@@ -54,8 +55,21 @@ class GestionProduits extends Component {
                     <p>{item.description}</p>
                     <p>{item.price} €</p>
                     <div>
-                        <button onClick={this.select} className="btn btn-primary" data-toggle="modal" data-target="#modif" id={item.id}>Modifier</button>
-                        <button className="btn btn-primary" >Supprimer</button>
+                        <button 
+                            onClick={this.select} 
+                            className="btn btn-primary" 
+                            data-toggle="modal" data-target="#modif" 
+                            id={item.id}>
+                            Modifier
+                        </button>
+                        <button 
+                            onClick={this.select}
+                            className="btn btn-primary"
+                            data-toggle="modal" data-target="#supp"
+                            id={item.id}
+                            >
+                            Supprimer
+                        </button>
                     </div>
                 </div>
             </div>
@@ -76,7 +90,7 @@ class GestionProduits extends Component {
         }
         newProduct.size = Number(e.target.size.value);
         newProduct.base = e.target.base.value;
-        console.log("*************");
+
         BDDaxiosProduits.postDonnees(newProduct, this.importBDD);
 
         // Remise à zéro des champs
@@ -93,15 +107,24 @@ class GestionProduits extends Component {
         e.preventDefault();
         let modifProduit = new ClassProduit();
         modifProduit.id = this.state.produitSel.id;
+
         modifProduit.name = e.target.fname.value;
         modifProduit.description = e.target.description.value;
-        modifProduit.price = e.target.price.value;
+        modifProduit.price = Number(e.target.price.value);
         modifProduit.image = e.target.image.value;
-        modifProduit.isRecomanded = e.target.isRecomanded.value;
-        modifProduit.size = e.target.size.value;
+        modifProduit.isRecomanded = e.target.isRecomanded.checked;
+        modifProduit.size = Number(e.target.size.value);
         modifProduit.base = e.target.base.value;
 
         BDDaxiosProduits.putDonnees(modifProduit, this.importBDD);
+    }
+
+    suppProduit = (e) => {
+        e.preventDefault();
+        let suppProduit = new ClassProduit();
+        suppProduit = this.state.produitSel.id;
+
+        BDDaxiosProduits.deleteDonnees(suppProduit, this.importBDD);
     }
 
     render() {
@@ -183,7 +206,7 @@ class GestionProduits extends Component {
                     <div className="modal-dialog" role="document">
                         <div className="modal-content">
                             <div className="modal-header">
-                                <h5 className="modal-title">Ajouter un produit</h5>
+                                <h5 className="modal-title">Modifier un produit</h5>
                                 <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
@@ -203,7 +226,7 @@ class GestionProduits extends Component {
                                         <label htmlFor="description">Description</label>
                                         <input 
                                             type="text" 
-                                            name="description" 
+                                            name="fdescription" 
                                             id="description" 
                                             className="form-control" 
                                             defaultValue={this.state.produitSel.description}/>
@@ -228,16 +251,27 @@ class GestionProduits extends Component {
                                     </div>
                                     {/* BTN radio true false pour l'affichage en première page */}
                                     <div className="form-group">
-                                        <label htmlFor="isRecomanded">Le produit doit-il être mis sur la page d'accueil ? (Oui, oui, O, o)</label>
-                                        <input type="text" name="isRecomanded" id="isRecomanded" className="form-control" />
+                                        <label htmlFor="isRecomanded">Le produit doit-il être mis sur la page d'accueil ? <br/>Si oui, cochez la case.</label>
+                                        <input 
+                                            type="checkbox" 
+                                            name="isRecomanded" 
+                                            id="isRecomanded" 
+                                            className="form-control" 
+                                            defaultValue={this.state.produitSel.isRecomanded}/>
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="size">Nombre de parts</label>
-                                        <input type="text" id="size" name="size" className="form-control" />
+                                        <input 
+                                            type="text" 
+                                            id="size" 
+                                            name="size" 
+                                            className="form-control" 
+                                            defaultValue={this.state.produitSel.size}/>
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="base">Base du gâteau</label>
-                                        <select className="form-control" id="base" name="base">
+                                        <select className="form-control" id="base" name="base"
+                                            defaultValue={this.state.produitSel.base}>
                                             <option>Vanille</option>
                                             <option>Chocolat</option>
                                             <option>Crème patissière</option>
@@ -245,14 +279,39 @@ class GestionProduits extends Component {
                                     </div>
                                     <div className="text-center">
                                         <button type="button" className="btn btn-primary" data-dismiss="modal">Fermer</button>
-                                        <button type="submit" className="btn btn-secondary">Ajouter</button>
+                                        <button type="submit" className="btn btn-secondary">Valider</button>
                                     </div>
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
-                {/* Fin MODAL d'ajout d'un produit */}
+                {/* Fin MODAL modif d'un produit */}
+                {/* MODAL suppression d'un produit */}
+                <div id="supp" className="modal" tabIndex="-1" role="dialog">
+                        <div className="modal-dialog" role="document">
+                            <div className="modal-content">
+                                <div className="modal-header">
+                                    <h5 className="modal-title">Supprimer un produit</h5>
+                                    <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div className="modal-body">
+                                    <form onSubmit={this.suppProduit}>
+                                        <h3>Êtes-vous sur de vouloir supprimer le produit ?</h3>
+                                        <p>Vous devrez recréer le produit si vous le voulez de nouveau.</p>
+                                        
+                                        <div className="text-center">
+                                            <button type="button" className="btn btn-primary" data-dismiss="modal">Annuler</button>
+                                            <button type="submit" className="btn btn-secondary">Valider</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {/* Fin MODAL suppression d'un produit */}
                 <button onClick={this.deconnexion} className="btn btn-primary mt-5">Déconnexion</button>
             </div>
         );

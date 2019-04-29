@@ -10,12 +10,12 @@ class Footer extends Component {
                 <div id="footerLinks">
                     <div className="container">
                         <div className="row">
-                            <div className="col">
+                            <div className="col-10 col-md-6 col-lg">
                             <Link to="/">
                                 <img src={logo} alt="Logo" className="img-fluid" id="logoFooter" />
                             </Link>
                             </div>
-                            <div className="col">
+                            <div className="col-10 col-md-6 col-lg">
                                 <ul className="list-group list-group-flush">
                                     <li className="list-group-item"><Link to="/products">Catalogue</Link></li>
                                     <li className="list-group-item"><Link to="/contact">Nous contacter</Link></li>
@@ -24,7 +24,7 @@ class Footer extends Component {
                                     <li className="list-group-item"><Link to="/faq">FAQ</Link></li>
                                 </ul>
                             </div>
-                            <div className="col">
+                            <div className="col-10 col-md-6 col-lg d-flex justify-content-center justify-content-md-end">
                                 <div className="row justify-content-end">
                                 <a href="https://www.facebook.com/" target="blank"><i className="fab fa-facebook-square"></i></a>
                                 <a href="https://twitter.com/" target="blank"><i className="fab fa-twitter-square"></i></a>
