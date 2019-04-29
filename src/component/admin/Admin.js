@@ -31,7 +31,7 @@ class Admin extends Component {
                             <label htmlFor="mdp">Saississez votre mot de passe</label>
                             <input
                                 id="mdpAdmin"
-                                type="text"
+                                type="password"
                                 className="form-control" />
                         </div>
                         <div className="text-center">
