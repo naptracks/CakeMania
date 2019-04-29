@@ -1,12 +1,12 @@
-.marginDeBase{
-    margin-top: 6.2rem;
-}
 
 .card{
     box-shadow: 0 0 0.5rem #535c68;
-    margin: 1rem 0.2rem; 
+    margin: 1rem 0rem;
+    padding: 0 0 
 }
-
+.col{
+    max-width: auto; 
+}
 
 .btn{
     margin: 2px 2px; 
@@ -22,4 +22,3 @@
 .containerButtons{
     margin: 2px 3px; 
 }
-

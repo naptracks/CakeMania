@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-// <Link to="/admin/gestion/clients"></Link>
-// <Link to="/admin/gestion/produits"></Link>
-// <Link to="/admin/gestion/commandes"></Link>
 import './Admin.css';
 import './Gestion.css';
 import imgAdminClients from '../../img/admin/adminClients.png';
@@ -46,7 +43,9 @@ class Gestion extends Component {
                         </Link>
                     </div>
                 </div>
+                <div className="text-center">
                 <button onClick={this.deconnexion} className="btn btn-primary">Déconnexion</button>
+                </div>
             </div>
         );
     }

@@ -2,8 +2,7 @@
     margin-top: 6.2rem;
 }
 
-#totalTTC{
-    background-color: #ff7979;
-    color: #ffffff;
+#plus, #moins {
+    width: 2.2rem;
     font-weight: bold;
 }

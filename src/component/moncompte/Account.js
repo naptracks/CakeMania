@@ -5,13 +5,14 @@ import {BrowserRouter,Route,Link} from 'react-router-dom';
 import MyAccount from './MyAccount';
 import MyOrders from './MyOrders';
 import MyHistoryOrders from './MyHistoryOrders';
+import '../moncompte/Account.css';
 
 class Account extends Component {
     render() {
         return (
             
             <BrowserRouter>
-            <div className="mt-5 d-flex justify-content-center">
+            <div className="mt-5 d-flex justify-content-center" id="myAccount">
                 <MenuCompte>
                     <Link to="/accessAccount" className="m-3">
                     <ItemsMenuCards 

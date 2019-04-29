@@ -15,6 +15,7 @@ import logo from './img/logo-CakeMania.png';
 import GestionClient from './component/admin/GestionClient';
 import GestionProduits from './component/admin/GestionProduits';
 import GestionCommandes from './component/admin/GestionCommandes';
+import FicheProduit from './component/catalogue/FicheProduit';
 
 class App extends Component {
   render() {
@@ -23,10 +24,11 @@ class App extends Component {
         <BrowserRouter>
           <Route exact path="/" component={Homepage} />
           {/* Si besoin de props, on utilise cette syntaxe : */}
-          <Route path="/products" component={() => {return <Catalogue />}} />
+          <Route path="/products" component={(props) => {return <Catalogue  {...props} />}} />
           <Route path="/contact" component={ContactUs} />
           <Route path="/account" component={Account} />
           <Route path="/basket" component={Panier} />
+          <Route path="/ficheProduit" component={FicheProduit} />
           <Route path="/faq" component={FAQ} />
           {/* Administration du site */}
           <Route path="/admin" component={Admin} />
@@ -36,7 +38,7 @@ class App extends Component {
           <Route path="/adminGestionCommandes" component={GestionCommandes} />
           {/* Fin administration du site */}
 
-              <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+          <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
                 <div className="container">
                   <Link to="/"><img src={logo} alt="Logo" id="logo" className="img-fluid" /></Link>
                   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"

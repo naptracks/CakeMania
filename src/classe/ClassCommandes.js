@@ -1,8 +1,13 @@
 class ClassCommandes {
-    id; //timestemp
+    idCommande; //timestemp
+    
     produits;
-    totalPrix;
     nbrProduit;
+    produitPrix;
+
+    totalPrix;
+    totalNbrProduit;
+
     dateCommande;
     dateRetrait;
 }
