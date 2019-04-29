@@ -1,0 +1,132 @@
+{
+  "customers": [
+    {
+      "id": 1,
+      "lastName": "Vermaut",
+      "firstName": "Hélène",
+      "email": "helene.vermaut@gmail.com",
+      "adressePostale": "55 rue Pasteur",
+      "codePostal": "59350",
+      "ville": "Saint André lez Lille",
+      "tel": "0526252525",
+      "paiement": "CB",
+      "commande": {}
+    },
+    {
+      "id": 2,
+      "lastName": "Magana",
+      "firstName": "Sylvain",
+      "email": "sylvainmagana@ymail.com",
+      "adressePostale": "12 rue Solférino",
+      "codePostal": "59000",
+      "ville": "Lille",
+      "tel": "0526252525",
+      "paiement": "CB",
+      "commande": {}
+    },
+    {
+      "id": 3,
+      "lastName": "Martel",
+      "firstName": "César",
+      "email": "cesar.martel9@gmail.com",
+      "adressePostale": "12 rue Solférino",
+      "codePostal": "59000",
+      "ville": "Lille",
+      "tel": "0526252525",
+      "paiement": "CB",
+      "commande": {}
+    },
+    {
+      "id": 4,
+      "lastName": "Vandingenen",
+      "firstName": "Maxence",
+      "email": "m.vandine@live.fr",
+      "adressePostale": "12 rue Solférino",
+      "codePostal": "59000",
+      "ville": "Lille",
+      "tel": "0526252525",
+      "paiement": "CB",
+      "commande": {}
+    },
+    {
+      "id": 5,
+      "lastName": "Lefait",
+      "firstName": "Joris",
+      "email": "joris.lefait@gmail.com",
+      "adressePostale": "54 rue de vaucouleurs",
+      "codePostal": "62620",
+      "ville": "Barlin City",
+      "tel": "0526252525",
+      "paiement": "CB",
+      "commande": {}
+    }
+  ],
+  "product": [
+    {
+      "id": 1,
+      "name": "Tarte aux pommes",
+      "description": "Pommes, crème, pâte feuilleté, canelle",
+      "price": 10.5,
+      "image": "http://helenevermaut.com/wp-content/uploads/2019/04/apple-pie.jpg",
+      "isRecomanded": true,
+      "size": 6,
+      "base": "Pomme"
+    },
+    {
+      "id": 2,
+      "name": "Brownie",
+      "description": "Gâteau fondant au chocolat, avec des noix",
+      "price": 10.5,
+      "image": "http://helenevermaut.com/wp-content/uploads/2019/04/brownie.jpg",
+      "isRecomanded": false,
+      "size": 6,
+      "base": "chocolat"
+    },
+    {
+      "id": 3,
+      "name": "Cupcake Myrtille",
+      "description": "Cupcake base vanille avec sa délicieuse mousse de myrtilles",
+      "price": 3,
+      "image": "http://helenevermaut.com/wp-content/uploads/2019/04/cupcake-blueberry.jpg",
+      "isRecomanded": true,
+      "size": 1,
+      "base": "vanille"
+    },
+    {
+      "id": 4,
+      "name": "Muffin tout choco",
+      "description": "Muffin au chocolat avec pépites de chocolat",
+      "price": 3,
+      "image": "http://helenevermaut.com/wp-content/uploads/2019/04/muffin-choco.jpg",
+      "isRecomanded": true,
+      "size": 1,
+      "base": "chocolat"
+    },
+    {
+      "id": 5,
+      "name": "Tartelette fraises myrtilles",
+      "description": "Tartelette base crème patissière, avec ses fraises et ses myrtilles",
+      "price": 4,
+      "image": "http://helenevermaut.com/wp-content/uploads/2019/04/tartelette-fruit.jpg",
+      "isRecomanded": false,
+      "size": 1,
+      "base": "crème patissière"
+    }
+  ],
+  "commandes": [
+    {
+      "id": 1,
+      "produits": [
+        "Tarte aux pommes",
+        "Tartelette fraises myrtilles"
+      ],
+      "totalPrix": 18.5,
+      "nbrProduit": [
+        1,
+        2
+      ],
+      "dateCommande": "25/04/2019",
+      "dateRetrait": "26/04/2019"
+    }
+  ]
+}
