@@ -5,7 +5,15 @@ import './Card.css';
 
 
 class Card extends React.Component {
-    
+
+    select = (e) => {
+        let id = e.target.id;
+        let gateau = this.props.tableGateaux.filter((item) => parseInt(item.id) === parseInt(id));
+        if (gateau.length > 0) {
+            gateau = gateau[0];
+            this.props.history.push(`/ficheProduit`, {state: { gateau :gateau }});
+        }
+    }
 
     render() { 
 
@@ -21,7 +29,7 @@ class Card extends React.Component {
                 <h5 class="card-title">{this.props.name}</h5>
                 <p class="card-text"> {this.props.price}</p>
 
-                <button type="button"  class="btn btn-primary" onClick={this.select} id={this.props.id}>Voir Fiche Produit</button>
+                <button type="button"  class="btn btn-primary" onClick={()=>this.props.select(this.props.id)} id={this.props.id}>Voir Fiche Produit</button>
               
                <form>
                 <div className="form-inline">

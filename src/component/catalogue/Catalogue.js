@@ -18,7 +18,7 @@ class Catalogue extends Component {
             tableCommande: [],
             //pour l'affichage
             articleSelection: new ClassProduit(),
-            //pour ajout � la commande
+            //pour ajout � la commande
             articleCommande : new ClassCommandes(),
         }
     
@@ -263,8 +263,8 @@ afficherLesProduits(){
   
 
     //SELECTION D'UN PRODUIT POUR POUVOIR LIÉ CET ARTICLE SPÉCIFIQUE À SA FICHE PRODUIT
-    select = (e) => {
-        let id = e.target.id;
+    handleSelect = (id) => {
+   
         let gateau = this.state.tableGateaux.filter((item) => parseInt(item.id) === parseInt(id));
         if (gateau.length > 0) {
             gateau = gateau[0];
@@ -306,7 +306,7 @@ afficherLesProduits(){
                  
                  <button type="button" class="btn btn-primary" onClick={() => this.calculatePrixTotal()}>Somme totale</button>
               { <Cards
-
+            
               tableGateaux={this.state.tableGateaux}
             
               prixTotal={this.state.prixTotal}
@@ -318,6 +318,8 @@ afficherLesProduits(){
               //receiving instruction from first child (card) and second child (produit description)  
               addQuantity={this.handleAddQuantity}
               takeOffQuantity={this.handleTakeOffQuantity}
+                select={this.handleSelect}
+
                             /> }
                             {this.afficherLesProduits()}
             </div>

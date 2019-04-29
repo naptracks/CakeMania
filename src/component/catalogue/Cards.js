@@ -49,7 +49,7 @@ render() {
          //raising event to the Catalogue
          addQuantity={this.props.addQuantity}
          takeOffQuantity={this.props.takeOffQuantity}
-      
+         select={this.props.select}
 //article selection from class produit for the display
         id={Gateau.id}
         price={Gateau.price}
@@ -64,7 +64,7 @@ render() {
 
 //MEthodes a faire remonter
     
-
+       
 
          /> )}
          </div>
