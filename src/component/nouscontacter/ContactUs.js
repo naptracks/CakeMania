@@ -56,14 +56,14 @@ class ContactUs extends Component {
                         {/* Appel à la méthode de gestion du submit sur le formulaire */}
                         {/* Le onSubmit est obligatoirement placé dans la balise form => norme HTML */}
                         <form onSubmit={this.handleSubmit}>
-                            <label htmlFor="name">Name :</label>
+                            <label htmlFor="name">Nom :</label>
                             {/* Appel à la méthode d'enregistrement des modifications */}
                             <input type="text" className="form-control" id="name" value={this.state.name} onChange={this.handleChangeLastName} />
-                            <label htmlFor="firstName">Firstname :</label>
+                            <label htmlFor="firstName">Prénom :</label>
                             <input type="text" className="form-control" id="firstName" value={this.state.firstName} onChange={this.handleChangeFirstName} />
-                            <label htmlFor="mail">Mail Adress :</label>
+                            <label htmlFor="mail">Email :</label>
                             <input type="email" className="form-control" id="mail" value={this.state.mail} onChange={this.handleChangeMail} />
-                            <label htmlFor="subject">Subject :</label>
+                            <label htmlFor="subject">Message :</label>
                             <textarea className="form-control mb-4" id="subject" value={this.state.subject} onChange={this.handleChangeSubject} />
                             <Button name="Envoyer" />
                         </form>
