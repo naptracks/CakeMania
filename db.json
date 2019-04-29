@@ -120,13 +120,18 @@
         "Tarte aux pommes",
         "Tartelette fraises myrtilles"
       ],
+      "prixUnitaire": [
+        10.5,
+        4
+      ],
       "totalPrix": 18.5,
       "nbrProduit": [
         1,
         2
       ],
       "dateCommande": "25/04/2019",
-      "dateRetrait": "26/04/2019"
+      "dateRetrait": "26/04/2019",
+      "refClient": "blabla"
     }
   ]
 }

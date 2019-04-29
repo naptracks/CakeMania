@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import BDDaxiosCommandes from '../../BDD/BDDaxiosCommandes';
+import './GestionCommandes.css';
 
 class GestionCommandes extends Component {
     constructor(props) {
@@ -33,11 +34,30 @@ class GestionCommandes extends Component {
         return this.state.tabCommande.map((item) =>
             <tr key={item.id}>
                 <td>{item.id}</td>
-                <td>{item.produits}</td>
-                <td>{item.totalPrix}</td>
-                <td>{item.nbrProduit}</td>
-                <td>{item.dateCommande}</td>
-                <td>{item.dateRetrait}</td>
+                <td>{item.refClient}</td>
+                <td>
+                    <ul className="list-group">
+                        {item.produits.map(product => 
+                            <li className="list-group-item">{product}</li>)
+                        }
+                    </ul>
+                </td>
+                <td>
+                    <ul className="list-group text-center">
+                        {item.prixUnitaire.map(prix => 
+                            <li className="list-group-item">{prix}</li>)
+                        }
+                    </ul>
+                </td>
+                <td>
+                    <ul className="list-group text-center">
+                        {item.nbrProduit.map((quantity) =>
+                            <li className="list-group-item">{quantity}</li>)
+                        }
+                    </ul>
+                </td>
+                <td className="text-center">{item.totalPrix}</td>
+                <td>Commande : {item.dateCommande} <br />Retrait : {item.dateRetrait}</td>
             </tr>
         );
     }
@@ -51,12 +71,13 @@ class GestionCommandes extends Component {
                     <table className="table table-hover table-striped">
                         <thead>
                             <tr>
-                                <th>id</th>
+                                <th>Id</th>
+                                <th>Client</th>
                                 <th>Produits</th>
-                                <th>Total prix</th>
-                                <th>Nombre de produit(s)</th>
-                                <th>Date de commande</th>
-                                <th>Date de retrait</th>
+                                <th className="text-center">Prix unitaire</th>
+                                <th className="text-center">Quantité</th>
+                                <th className="text-center">Total prix</th>
+                                <th>Date(s)</th>
                             </tr>
                         </thead>
                         <tbody>
