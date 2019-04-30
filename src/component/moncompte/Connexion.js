@@ -13,7 +13,7 @@ class Connexion extends Component {
                         <i class="fas fa-user text-center"></i>
                         <hr />
                         <h4>Vous avez déjà un compte ?</h4>
-                        <form>
+                        <form onSubmit={this.props.onsubmit}>
                             <div className="form-group">
                                 <label htmlFor="email">Saississez votre email</label>
                                 <input
@@ -29,7 +29,7 @@ class Connexion extends Component {
                                     className="form-control" />
                             </div>
                             <div className="text-center">
-                                <Button name="Connexion" />
+                                <Button type="submit" name="Connexion" />
                             </div>
                         </form>
                     </div>
