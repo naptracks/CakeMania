@@ -82,7 +82,7 @@ class MyAccount extends Component {
                 <InfoBox 
                 boxHeader="Vos informations personnelles "
                 boxTitle1 = "Identité"
-                boxText1 = {this.state.name}  
+                boxText1 = {this.props.current}  // this.state.name
                 boxTitle2 = "Adresse"
                 boxText2 = {this.state.adress}
                 boxTitle3 = "Adresse de livraison"

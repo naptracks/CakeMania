@@ -10,6 +10,8 @@ import Connexion from './Connexion';
 import  BDDaxiosCustomer from '../../BDD/BDDaxiosClients'
 
 class Account extends Component {
+
+    
     constructor(props) {
         super(props);
         
@@ -63,6 +65,10 @@ componentDidMount() {
                 this.setState({
                     logged: true
                 })
+                localStorage.setItem('CurrentUser', client.firstName);
+                let user = localStorage.getItem('CurrentUser');
+                console.table(user);
+                alert(`Hello ${user}`);
             // } else{
             //     this.setState({
             //         logged:false
@@ -87,10 +93,13 @@ componentDidMount() {
                  >Click me</button>
                 </div>
 
-                {this.state.logged &&
+                {this.state.logged && <React.Fragment>
+                    <div className="text-center mt-4">Vous êtes connecté en tant que {localStorage.getItem('CurrentUser')}</div>
                 <MenuCompte>
+                    
                     <Link to="/accessAccount" className="m-3">
                     <ItemsMenuCards 
+                    current = {localStorage.getItem('CurrentUser')}
                     cardTitle = "Accéder à mon compte"
                     cardText = "Consultez les détails de mon compte"
                     />
@@ -108,6 +117,7 @@ componentDidMount() {
                     />
                     </Link>
                 </MenuCompte>
+                </React.Fragment>
                 }
                 </div>
                 
