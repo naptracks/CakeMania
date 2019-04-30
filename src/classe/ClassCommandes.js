@@ -1,5 +1,6 @@
 class ClassCommandes {
     idCommande; //timestemp
+    idClient;
     
     produits;
     nbrProduit;

@@ -21,21 +21,21 @@ class Card extends React.Component {
     
         return(
       
-            <div class="col-sm-4">
-            <div class="card text-center">
-            <img class="card-img-top" src={this.props.image} alt="brownie" />
-            <div class="card-body">
-                <h5 class="card-title">{this.props.name}</h5>
-                <p class="card-text"> {this.props.price}</p>
+            <div className="col-sm-4">
+            <div className="card text-center">
+            <img className="card-img-top" src={this.props.image} alt="brownie" />
+            <div className="card-body">
+                <h5 className="card-title">{this.props.name}</h5>
+                <p className="card-text"> {this.props.price}</p>
 
-                <button type="button"  class="btn btn-primary" onClick={()=>this.props.select(this.props.id)} id={this.props.id}>Voir Fiche Produit</button>
+                <button type="button"  className="btn btn-primary" onClick={()=>this.props.select(this.props.id)} id={this.props.id}>Voir Fiche Produit</button>
               
                <form>
                 <div className="form-inline">
                     <label htmlFor="quantity">Combien de {this.props.name} voulez-vous ?</label>
                    
                     <div className="containerButtons">
-                    <div class="row">
+                    <div className="row">
                
                         <button
                             type="button"

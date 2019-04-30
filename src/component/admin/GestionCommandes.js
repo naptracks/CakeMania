@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import BDDaxiosCommandes from '../../BDD/BDDaxiosCommandes';
+import BDDaxiosClients from '../../BDD/BDDaxiosClients';
 import './GestionCommandes.css';
 
 class GestionCommandes extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            tabCommande: []
+            tabCommande: [],
+            tabClients: []
         }
     }
 
@@ -14,8 +16,19 @@ class GestionCommandes extends Component {
     importBDD = () => {
         BDDaxiosCommandes.getDonnees((data) => {
             this.setState({ tabCommande: data },
-                () => console.log(this.state.tabCommande));
+                () => {
+                    console.log(`TabCommandes`);
+                    console.log(this.state.tabCommande);
+                })
         });
+
+        BDDaxiosClients.getDonnees((data) => {
+            this.setState({ tabClients: data },
+                () => {
+                    console.log(`TabClients`);
+                    console.log(this.state.tabClients)
+                });
+        })
 
     }
     // INITIALISATION DE LA BDD AU LANCEMENT DE L'APPEL
@@ -34,17 +47,28 @@ class GestionCommandes extends Component {
         return this.state.tabCommande.map((item) =>
             <tr key={item.id}>
                 <td>{item.id}</td>
-                <td>{item.refClient}</td>
+                {/* On parcourt le tableau de client pour lier l'id du client à la refClient de la commande */}
                 <td>
                     <ul className="list-group">
-                        {item.produits.map(product => 
+                        {this.state.tabClients.map((client) => {
+                            if (item.refClient === client.id) {
+                                let currentClient = `${client.lastName} ${client.firstName}`;
+                                console.log(`Client en cours : ${currentClient}`);
+                                return <li className="list-group-item font-weight-bold">{currentClient}</li>
+                            }
+                        })}
+                    </ul>
+                </td>
+                <td>
+                    <ul className="list-group">
+                        {item.produits.map(product =>
                             <li className="list-group-item">{product}</li>)
                         }
                     </ul>
                 </td>
                 <td>
                     <ul className="list-group text-center">
-                        {item.prixUnitaire.map(prix => 
+                        {item.prixUnitaire.map(prix =>
                             <li className="list-group-item">{prix}</li>)
                         }
                     </ul>

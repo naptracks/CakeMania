@@ -124,7 +124,7 @@ afficherLesProduits(){
         return (
             <div>
                  
-                 <button type="button" class="btn btn-primary" onClick={() => this.calculatePrixTotal()}>Somme totale</button>
+                 <button type="button" className="btn btn-primary" onClick={() => this.calculatePrixTotal()}>Somme totale</button>
               { <Cards
             
               tableGateaux={this.state.tableGateaux}

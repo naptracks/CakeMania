@@ -34,8 +34,8 @@ render() {
         console.log(this.props);
         return ( 
           <div>
-          <div class="container">
-            <div class="row">
+          <div className="container">
+            <div className="row">
          {this.props.tableGateaux.map((Gateau, i) =>
          <Card   key={i}
          //props from the catalogue
@@ -64,7 +64,7 @@ render() {
          </div>
          </div>
 
-            <button type="button" class="btn btn-primary" onClick={() => this.calculatePrixTotal()}>Somme totale</button>
+            <button type="button" className="btn btn-primary" onClick={() => this.calculatePrixTotal()}>Somme totale</button>
             </div>
 
         );
