@@ -10,7 +10,7 @@ class Connexion extends Component {
             <div className="container my-5 marginDeBase" id="fenetreConnexion">
                 <div className="row justify-content-around">
                     <div className="col-4 card p-3">
-                        <i class="fas fa-user text-center"></i>
+                        <i className="fas fa-user text-center"></i>
                         <hr />
                         <h4>Vous avez déjà un compte ?</h4>
                         <form onSubmit={this.props.onsubmit}>
@@ -34,7 +34,7 @@ class Connexion extends Component {
                         </form>
                     </div>
                     <div className="col-4 card p-3">
-                        <i class="fas fa-user-plus text-center"></i>
+                        <i className="fas fa-user-plus text-center"></i>
                         <hr />
                         <h4>Créer un compte</h4>
                         <form>
