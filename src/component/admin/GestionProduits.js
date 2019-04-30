@@ -129,7 +129,7 @@ class GestionProduits extends Component {
 
     render() {
         return (
-            <div className="container marginDeBase">
+            <div className="container marginDeBase" id="gestionProd">
                 <button onClick={this.goBack} className="btn btn-primary">Retour</button>
                 <div className="mt-3">
                     <h2>Gestion des produits</h2>
