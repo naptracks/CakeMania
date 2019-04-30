@@ -12,6 +12,8 @@ class Catalogue extends Component {
 
     cakeSelected;
         state = {
+         
+            nbrProduit:0,
             totalNbrProduit:0,
             prixTotal: 0,
             tableGateaux: [],
@@ -76,11 +78,12 @@ afficherLesProduits(){
     // ************************** FIN MODIF LN ******************************
     handleTakeOffQuantity=(id)=>{
      
-       
         if (this.state.totalNbrProduit > 0) {
           this.setState(
             {
-                totalNbrProduit: this.state.totalNbrProduit - 1
+                totalNbrProduit: this.state.totalNbrProduit - 1,
+              
+                nbrProduit: this.state.nbrProduit-1
             },
          /*    () => this.calculeTotal() */
           );
@@ -89,15 +92,31 @@ afficherLesProduits(){
     
 
     handleAddQuantity=(id)=>{
+    
+        let articleCommande=this.state.articleCommande; 
+
         if (this.state.totalNbrProduit >= 0) {
       
             this.setState(
               {
-                totalNbrProduit: this.state.totalNbrProduit + 1
-
+                totalNbrProduit: this.state.totalNbrProduit + 1, 
+                
               },
+              
             /*   () => this.calculeTotal() */
             );
+
+            if(this.state.tableGateaux.id===this.props.id){
+                console.log("test");
+                articleCommande.nbrProduit+=1
+                
+                this.setState(
+                    {
+                        nbrProduit: this.state.nbrProduit + 1, 
+                      
+                    },
+                )
+            }
           }
         };
 
@@ -115,7 +134,7 @@ afficherLesProduits(){
 
               articleSelection ={this.state.articleSelection}
               articleCommande={this.state.articleCommande}
-              nbrProduit={this.nbrProduit}
+              nbrProduit={this.state.nbrProduit}
               //receiving instruction from first child (card) and second child (produit description)  
               addQuantity={this.handleAddQuantity}
               takeOffQuantity={this.handleTakeOffQuantity}

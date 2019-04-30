@@ -38,13 +38,15 @@ render() {
             <div class="row">
          {this.props.tableGateaux.map((Gateau, i) =>
          <Card   key={i}
-         nbrProduit={Gateau.nbrProduit}
+         //props from the catalogue
+         nbrProduit={this.props.nbrProduit}
 
          //raising event to the Catalogue
          addQuantity={this.props.addQuantity}
          takeOffQuantity={this.props.takeOffQuantity}
          select={this.props.select}
-//article selection from class produit for the display
+
+        //article selection from class produit for the display
         id={Gateau.id}
         price={Gateau.price}
         name={Gateau.name}

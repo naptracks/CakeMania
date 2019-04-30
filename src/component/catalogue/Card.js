@@ -20,7 +20,6 @@ class Card extends React.Component {
       console.log(this.props)
     
         return(
-         
       
             <div class="col-sm-4">
             <div class="card text-center">
@@ -42,6 +41,7 @@ class Card extends React.Component {
                             type="button"
                             id="moins"
                             className="btn btn-primary"
+                            ref={this.props.id}
                            onClick={()=>this.props.takeOffQuantity(this.props.id)}
                         >
                             -
@@ -52,7 +52,7 @@ class Card extends React.Component {
                             name="maQuantite"
                             type="text"
                             className="text-center form-control"
-                            value={this.props.cards}/>
+                            value={this.props.nbrProduit}/>
                
                         <button
                             type="button"

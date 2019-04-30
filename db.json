@@ -4,6 +4,7 @@
       "id": 1,
       "lastName": "Vermaut",
       "firstName": "Hélène",
+      "password": "admin",
       "email": "helene.vermaut@gmail.com",
       "adressePostale": "55 rue Pasteur",
       "codePostal": "59350",
@@ -16,6 +17,7 @@
       "id": 2,
       "lastName": "Magana",
       "firstName": "Sylvain",
+      "password": "admin",
       "email": "sylvainmagana@ymail.com",
       "adressePostale": "12 rue Solférino",
       "codePostal": "59000",
@@ -28,6 +30,7 @@
       "id": 3,
       "lastName": "Martel",
       "firstName": "César",
+      "password": "admin",
       "email": "cesar.martel9@gmail.com",
       "adressePostale": "12 rue Solférino",
       "codePostal": "59000",
@@ -40,6 +43,7 @@
       "id": 4,
       "lastName": "Vandingenen",
       "firstName": "Maxence",
+      "password": "admin",
       "email": "m.vandine@live.fr",
       "adressePostale": "12 rue Solférino",
       "codePostal": "59000",
@@ -52,6 +56,7 @@
       "id": 5,
       "lastName": "Lefait",
       "firstName": "Joris",
+      "password": "admin",
       "email": "joris.lefait@gmail.com",
       "adressePostale": "54 rue de vaucouleurs",
       "codePostal": "62620",
@@ -111,6 +116,16 @@
       "isRecomanded": false,
       "size": 1,
       "base": "crème patissière"
+    },
+    {
+      "id": 6,
+      "name": "Gâteau au chocolat <3",
+      "description": "Gâteau moelleux au chocolat",
+      "price": 12.5,
+      "image": "http://helenevermaut.com/wp-content/uploads/2019/04/gateau-au-chocolat.png",
+      "isRecomanded": false,
+      "size": 6,
+      "base": "Vanille"
     }
   ],
   "commandes": [
