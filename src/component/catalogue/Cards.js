@@ -8,16 +8,13 @@ import Card from './Card'
 export default class Cards extends Component {
    
   
-    afficherLesProduits(){
+afficherLesProduits(){
 
-      
         return ( {/* <div>
            
             {cards.map(card=> <Card/>)}
             </div> */}
                 )
-     
-    
 }
 
 importBDD = () => {
@@ -33,15 +30,12 @@ importBDD = () => {
  */
 
 
-
-
-
 render() { 
         console.log(this.props);
         return ( 
           <div>
           <div class="container">
-            <div class="row"></div>
+            <div class="row">
          {this.props.tableGateaux.map((Gateau, i) =>
          <Card   key={i}
          nbrProduit={Gateau.nbrProduit}
@@ -63,13 +57,10 @@ render() {
         articleCommande={Gateau.articleCommande}
 
 //MEthodes a faire remonter
-    
-       
 
          /> )}
          </div>
-        
-
+         </div>
 
             <button type="button" class="btn btn-primary" onClick={() => this.calculatePrixTotal()}>Somme totale</button>
             </div>
