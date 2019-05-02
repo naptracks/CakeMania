@@ -4,7 +4,7 @@ class Produits extends Component {
     constructor(props){
         super(props)
         this.state={
-          descriptif : 
+          descriptif : undefined,
      }
     }
 

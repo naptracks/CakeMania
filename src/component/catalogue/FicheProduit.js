@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./FicheProduit.css";
+import ValideCommand from "../panier/ValideCommand";
 
 class FicheProduit extends Component {
   constructor(props) {
@@ -48,6 +49,7 @@ class FicheProduit extends Component {
   };
 
   render() {
+    
     return (
       <div className="marginDeBase container">
         <div className="row">
@@ -99,7 +101,7 @@ class FicheProduit extends Component {
               </div>
             </form>
             <p>Prix total : {this.state.prixTotal} €</p>
-            <button className="btn btn-primary">Ajouter au panier</button>
+            <button className="btn btn-primary" onClick={ValideCommand.addInPanier(this.props.location.state.state.gateau)}>Ajouter au panier</button>
           </div>
         </div>
       </div>

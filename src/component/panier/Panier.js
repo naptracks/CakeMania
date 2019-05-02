@@ -1,46 +1,49 @@
 import React, { Component } from 'react';
 import BDDaxiosCommandes from '../../BDD/BDDaxiosCommandes';
 import './Panier.css';
+import ValideCommand from './ValideCommand';
 
 class Panier extends Component {
     state = {
-        tabPanier: []
+        tabPanier: ValideCommand.preCommand
     }
-    /************************************/
-    // IMPORT DE LA BDD
-    importBDD = () => {
-        BDDaxiosCommandes.getDonnees((data) => {
-            this.setState({ tabPanier: data },
-                () => console.table(this.state.tabPanier));
-        });
 
-    }
-    // INITIALISATION DE LA BDD AU LANCEMENT DE L'APPEL
-    componentDidMount() {
-        this.importBDD();
-    }
-    /************************************/
+    
 
-    affichageTabPanier = () => {
+  renderTabPanier = () => {
         return this.state.tabPanier.map((item) =>
         
             <tr key={item.id}>
                 <td>
-                {console.log(item)}
-                    {/* {this.affichageDesProduits} */}
-                    {item.produits.map( product => <p>{product}</p>)}
+                    {item.name}
                 </td>
-                <td>{item.nbrProduit.map((cookie) => <p>{cookie}</p>)}</td>
-                <td>{item.totalPrix}</td>
+                <td>{item.price}</td>
+                <td>{this.quantite}</td>
                 <td>
                     <button className="btn btn-primary">sup</button>
+                    <button
+                    type="button"
+                    id="moins"
+                    className="btn btn-primary"
+                    // onClick={this.takeOffQuantity}
+                  >
+                    -
+                  </button>
+                  <button
+                    type="button"
+                    id="plus"
+                    className="btn btn-primary"
+                    // onClick={this.addQuantity}
+                  >
+                    +
+                  </button>
                 </td>
             </tr>
         );
     }
 
     render() {
-        console.log(this.state.tabPanier.produits);
+        console.table(this.state.tabPanier);
         return (
             <div className="marginDeBase container">
                 <h2>Mon panier</h2>
@@ -50,21 +53,22 @@ class Panier extends Component {
                     <thead>
                         <tr>
                             <th>Article</th>
+                            <th>Prix</th>
                             <th>Quantité</th>
-                            <th>Prix total</th>
-                            <th></th>
+                            <th colSpan="2">Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {this.affichageTabPanier()}
-                        <tr id="totalTTC">
-                            <td>Prix total de la commande</td>
-                            <td></td>
-                            <td>le prix total</td>
-                            <td></td>
-                        </tr>
+                        {this.renderTabPanier()}                
+                        
                     </tbody>
                 </table>
+                <button 
+                className="btn btn-primary"
+                onClick={ValideCommand.sendPanierToBDD}
+                > Passer au Paiement
+                </button>
+
             </div>
         );
     }

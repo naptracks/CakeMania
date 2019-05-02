@@ -12,6 +12,7 @@ class BDDaxiosCommandes {
             )
             .catch((error) => console.log(error));
     }
+    
     static postDonnees = (data, callback) => {
         axios.post(url, data)
             .then(

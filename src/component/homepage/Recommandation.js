@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import BDDaxiosProduits from '../../BDD/BDDaxiosProduits';
+import ValideCommand from '../panier/ValideCommand';
 
 class Recommandation extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            tabProduits: []
+            tabProduits: [],
+            gateauSel: undefined,
         }
     }
 
@@ -22,6 +24,16 @@ class Recommandation extends Component {
         this.importBDD();
     }
 
+    //Selection du gateau et Ajout au tab preCommand
+    gateauSel = (e) => {
+        let id = parseInt(e.target.id);
+        let tab = this.state.tabProduits;
+        let gateau = tab.find(item=>item.id === id);
+        if(gateau !== undefined )
+        {
+            this.setState({gateauSel:gateau},()=>ValideCommand.addInPanier(this.state.gateauSel));
+        }
+    }
 
     affichageProduits = () => {
         return (
@@ -32,8 +44,11 @@ class Recommandation extends Component {
                 <div className="card-body text-center">
                     <h4>{item.name}</h4>
                     <p>{item.description}</p>
-                    <p>{item.price} €</p>
-                    <button className="btn btn-primary">Ajouter</button>
+                    <p>{item.price} €</p>                    
+                    <button className="btn btn-primary" id={item.id}
+                    onClick={this.gateauSel}
+                    >Ajouter
+                    </button>
                 </div>
             </div>
             : ''
