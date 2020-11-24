@@ -23,7 +23,7 @@ class Panier extends Component {
                     <button className="btn btn-primary">sup</button>
                     <button
                     type="button"
-                    id="moins"
+                    id={item.id}
                     className="btn btn-primary"
                     // onClick={this.takeOffQuantity}
                   >
@@ -31,7 +31,7 @@ class Panier extends Component {
                   </button>
                   <button
                     type="button"
-                    id="plus"
+                    id={item.id}
                     className="btn btn-primary"
                     // onClick={this.addQuantity}
                   >
